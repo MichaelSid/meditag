@@ -29,7 +29,7 @@ describe "User profile page" do
     puts page.html
     click_button 'Create Profile'      
 
-    expect(current_path).to eq "/profile/#{user_id}"
+    expect(current_path).to eq "/profile"
     expect(page).to have_content 'London'
     end
   end

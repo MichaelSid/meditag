@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(new_profile_params)
+    @profile.user = current_user
 
     if @profile.save
       redirect_to "/profile"
