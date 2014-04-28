@@ -2,16 +2,16 @@
 
 FactoryGirl.define do
   factory :profile do
-    firstname "MyString"
-    lastname "MyString"
-    dob "2014-04-28"
-    contactnr "MyString"
-    address1 "MyString"
-    address2 "MyString"
-    town "MyString"
-    county "MyString"
-    country "MyString"
-    postcode "MyString"
-    gender "MyString"
+    firstname "John"
+    lastname "Smith"
+    dob "28-04-1988"
+    contactnr "0800123456"
+    address1 "15"
+    address2 "A road"
+    town "London"
+    county "Sussex"
+    country "England"
+    postcode "sw14g"
+    gender "male"
   end
 end
