@@ -2,13 +2,14 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { :registrations => "registration" }
   
   root 'home#index'
-  
 
-  get '/profile/new' => "profile#new", :as => "new_profile"
-  get '/profile/show' => "profile#show", :as => "profiles"
-  post '/profile' => "profile#create"
-  get '/profile/edit' => "profile#edit"
-  get '/profile/new' => "profile#new"
+  resource :profile  
+
+  # get '/profile/new' => "profile#new", :as => "new_profile"
+  # get '/profile/show' => "profile#show", :as => "profiles"
+  # post '/profile' => "profile#create"
+  # get '/profile/edit' => "profile#edit"
+  # get '/profile/new' => "profile#new"
 
 
 

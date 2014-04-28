@@ -25,9 +25,11 @@ describe "User profile page" do
     fill_in 'Country', with: "England"
     fill_in 'Postcode', with: "sw14g"
     fill_in 'Gender', with: "male"
+
+    puts page.html
     click_button 'Create Profile'      
 
-    expect(current_path).to eq '/profile/#{user_id}'
+    expect(current_path).to eq "/profile/#{user_id}"
     expect(page).to have_content 'London'
     end
   end

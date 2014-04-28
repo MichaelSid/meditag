@@ -1,4 +1,4 @@
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
@@ -8,14 +8,14 @@ class ProfileController < ApplicationController
     @profile = Profile.new(new_profile_params)
 
     if @profile.save
-      redirect_to '/profile/#{user_id}'
+      redirect_to "/profile"
     else
       render 'new'
     end
   end
 
   def show
-    @profile = Profile.find params[:id]
+    @profile = current_user.profile
   end
 
   private
