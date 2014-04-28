@@ -1,8 +1,39 @@
-<h1>Add information.</h1>
+<h1>Your Information</h1>
 
 <%= form_for @profile do |f| %>
-  <%= f.label :firstname %>
+  <%= f.label :firstname, 'First Name' %>
   <%= f.text_field :firstname, required: true %>
+
+  <%= f.label :lastname, 'Last Name' %>
+  <%= f.text_field :lastname, required: true %>
+
+  <%= f.label :dob, 'D.O.B.' %>
+  <%= f.text_field :dob, required: true %>
+
+  <%= f.label :contactnr, 'Contact Number' %>
+  <%= f.text_field :contactnr, required: true %>
+
+  <%= f.label :address1, 'Address Line 1' %>
+  <%= f.text_field :address1, required: true %>
+
+  <%= f.label :address2, 'Address line 2' %>
+  <%= f.text_field :address2, required: true %>
+
+  <%= f.label :town, 'Town' %>
+  <%= f.text_field :town, required: true %>
+
+  <%= f.label :county, 'County' %>
+  <%= f.text_field :county, required: true %>
+
+  <%= f.label :country, 'Country' %>
+  <%= f.text_field :country, required: true %>
+
+  <%= f.label :postcode, 'Postcode' %>
+  <%= f.text_field :postcode, required: true %>
+
+  <%= f.label :gender, 'Gender' %>
+  <%= f.text_field :gender, required: true %>
+
 
   <%= f.submit %>
   
