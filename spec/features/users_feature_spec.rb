@@ -8,7 +8,6 @@ describe "sign up" do
     fill_in 'Password confirmation', with: '12345678'
     click_button 'Sign up'
 
-    expect(page).to have_content 'Welcome user!'
+    expect(current_path).to eq '/profile/new'
   end
-  
 end
