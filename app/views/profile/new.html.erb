@@ -1,0 +1,9 @@
+<h1>Add information.</h1>
+
+<%= form_for @profile do |f| %>
+  <%= f.label :firstname %>
+  <%= f.text_field :firstname, required: true %>
+
+  <%= f.submit %>
+  
+<%end%>

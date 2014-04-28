@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  # devise_for :users, controllers: { registrations: "registrations" }
-  devise_for :users
+  devise_for :users, controllers: { :registrations => "registration" }
   
-  # get 'home/index'
   root 'home#index'
-  resources :profile
   
+
+  get '/profile/new' => "profile#new", :as => "new_profile"
+  get '/profile/show' => "profile#show", :as => "profiles"
+  post '/profile' => "profile#create"
+  get '/profile/edit' => "profile#edit"
+  get '/profile/new' => "profile#new"
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
