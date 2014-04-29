@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resource :profile  
+  resources :medications
 
   # get '/profile/new' => "profile#new", :as => "new_profile"
   # get '/profile/show' => "profile#show", :as => "profiles"
