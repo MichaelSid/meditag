@@ -1,5 +1,14 @@
 require 'spec_helper'
 
-describe Profile do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe 'profile' do 
+  context 'adding to user' do
+    before do 
+      @user = create(:user)
+    end
+    it "save to database" do
+      create(:profile, user: @user)
+
+      expect(Profile.count).to eq 1
+    end
+  end
 end
