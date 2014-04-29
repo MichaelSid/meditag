@@ -10,8 +10,9 @@ describe "User profile page" do
   end
 
   context 'information was previously added' do
+    let(:rick) { create(:user) }
     it 'displays all the information entered by user' do
-    login_as create(:user)
+    login_as rick
     visit '/profile/new'
 
     fill_in 'First Name', with: "John"
@@ -30,6 +31,22 @@ describe "User profile page" do
 
     expect(current_path).to eq "/profile"
     expect(page).to have_content 'London'
+    end
+
+    context 'editing profile' do 
+      before do
+        login_as rick
+        create(:profile, user: rick)
+      end
+
+      it 'should update the profile' do 
+        visit '/profile/edit'
+        fill_in 'Last Name', with: 'Brown'
+        click_button 'Update Profile'
+
+        expect(current_path).to eq "/profile"
+        expect(page).to have_content 'Brown'
+      end
     end
   end
 end
