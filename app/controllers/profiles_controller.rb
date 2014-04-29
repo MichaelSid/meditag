@@ -15,19 +15,23 @@ class ProfilesController < ApplicationController
     end
   end
 
+
+
+
   def show
     @profile = current_user.profile
   end
 
   def edit
-    @profile = current_user.profile
+    @profile = current_user.profile || current_user.profile.new
   end
 
   def update
     @profile = current_user.profile
 
     if @profile.update(new_profile_params)
-      redirect_to "/profile"
+      flash[:notice] = 'Profile udpate successfully'
+      redirect_to "/profile/edit"
     else
       render 'update'
     end

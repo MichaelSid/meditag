@@ -1,0 +1,12 @@
+<h2>Medications</h2>
+
+<% if @medications.any? %>
+
+  <% @medications.each do |med| %>
+    <p><%= med.medication %> </p>
+    <p><%= med.dose %> </p>
+  <% end %>
+
+<% else %>
+  <p>You don't take any medication :)</p>
+<% end %>

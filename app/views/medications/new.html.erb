@@ -1,0 +1,12 @@
+<h2>New medication</h2>
+
+<%= form_for @medication, url: medications_path do |f| %> </p>
+  <p> <%= f.label :medication, 'Medication' %>  </p>
+  <p> <%= f.text_field :medication%> </p>
+
+  <p> <%= f.label :dose, 'Dose' %> </p>
+  <p> <%= f.text_field :dose%> </p>
+
+  <p><%= f.submit %></p>
+
+<% end %>

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resource :profile  
   resources :conditions
+  resources :medications
+
 
 
 

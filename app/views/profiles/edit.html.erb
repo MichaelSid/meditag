@@ -1,6 +1,6 @@
 <h1>Your Information</h1>
 
-<%= form_for @profile, url: profile_path do |f| %> </p>
+<%= form_for @profile, url: profile_path, method: :patch do |f| %> </p>
   <p> <%= f.label :firstname, 'First Name' %>  </p>
   <p> <%= f.text_field :firstname, required: true %> </p>
 
