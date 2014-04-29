@@ -1,0 +1,22 @@
+<div class='row'>
+
+	<% if @conditions.any? %>
+		<% @conditions.each do |condition| %>
+
+			<div class='col-md-4'>
+				<h1><%= link_to condition.condition, condition_path(condition) %></h1>
+				
+				<%= link_to 'Edit', edit_condition_path(condition), class: 'btn btn-primary' %> 
+
+				<%= link_to "Delete #{condition.condition}", condition_path(condition), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %> 
+			</div>
+		<% end %>
+	<% else %>
+		No conditions added.
+	<% end %>
+
+</div>
+
+<h3>
+	<%= link_to 'Add a condition', new_condition_path %>
+</h3>
