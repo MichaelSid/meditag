@@ -3,7 +3,8 @@ require 'spec_helper.rb'
 describe "User profile page" do
   context 'No information yet' do
     it 'displays a message' do 
-      visit '/profile/new'
+      login_as create(:user)
+      visit '/profile/edit'
 
       expect(page).to have_content 'Your Information'
     end
@@ -11,6 +12,7 @@ describe "User profile page" do
 
   context 'information was previously added' do
     let(:rick) { create(:user) }
+
     it 'displays all the information entered by user' do
     login_as rick
     visit '/profile/new'
