@@ -50,6 +50,5 @@ class ConditionsController < ApplicationController
 		params[:condition].permit(:condition, :notes)
 	end
 
-
 end
 
