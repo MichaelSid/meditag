@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resource :profile  
+  resource :user, only: [:update]
   resources :conditions
   resources :medications
 
