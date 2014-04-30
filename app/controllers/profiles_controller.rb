@@ -15,9 +15,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-
-
-
   def show
     @profile = current_user.profile
   end
@@ -30,7 +27,7 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
 
     if @profile.update(new_profile_params)
-      flash[:notice] = 'Profile udpate successfully'
+      flash[:notice] = 'Profile updated successfully'
       redirect_to "/profile/edit"
     else
       render 'update'
