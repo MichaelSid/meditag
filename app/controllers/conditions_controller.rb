@@ -45,7 +45,6 @@ class ConditionsController < ApplicationController
 		redirect_to '/conditions'
 	end
 
-
 	private
 
 	def condition_params
