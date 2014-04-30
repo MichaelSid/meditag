@@ -5,6 +5,7 @@ class MedicationsController < ApplicationController
   end
 
   def new
+    authenticate_user!
     @medication = Medication.new
   end
 
