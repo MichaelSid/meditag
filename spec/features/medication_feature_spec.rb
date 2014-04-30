@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "medication" do
+describe "medication", :js => true do
   let(:rick) { create(:user) }
   before { login_as rick }
   
@@ -20,14 +20,11 @@ describe "medication" do
     it 'displays on the page' do 
       fill_in 'Medication', with: 'Pulmecort'
       fill_in 'Dose', with: '2mg'
-      click_button 'Create Medication'
+      click_button 'Update Medications'
 
-      find_field('medication_dose').value.should eq '2mg'
+      find_field('Dose').value.should eq '2mg'
     end
   end
 
-  context 'adding another medication' do 
-    click_button '+'
-    
 
 end

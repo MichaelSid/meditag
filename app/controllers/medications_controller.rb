@@ -8,7 +8,8 @@ class MedicationsController < ApplicationController
 
   def new
     authenticate_user!
-    @medication = Medication.new
+    
+    current_user.medications.new if current_user.medications.none?
   end
 
   def create
@@ -23,6 +24,14 @@ class MedicationsController < ApplicationController
     end
   end
 
+  def destroy
+    @medication = Medication.find(params[:id])
+    @medication.destroy
+
+    flash[:notice] = 'Medication deleted successfully!'
+    redirect_to new_medication_path
+  end
+
 
 
   private
@@ -30,7 +39,7 @@ class MedicationsController < ApplicationController
   def new_medication_params
     params[:medication].permit(
       :medication,
-      :dose,)
+      :dose)
   end
 end
 
