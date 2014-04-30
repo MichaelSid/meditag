@@ -45,7 +45,8 @@ describe "User profile page" do
         click_button 'Update Profile'
 
         expect(current_path).to eq "/profile/edit"
-        expect(page).to have_content 'Brown'
+        find_field('profile_lastname').value.should eq 'Brown'
+        
       end
     end
   end

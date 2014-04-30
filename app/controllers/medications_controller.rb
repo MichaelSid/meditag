@@ -14,11 +14,14 @@ class MedicationsController < ApplicationController
     @medication.user = current_user
 
     if @medication.save
-      redirect_to "/medications"
+      render 'new'
     else
       render 'new'
+      flash[:notice] = "Fill in all fields!"
     end
   end
+
+
 
   private
 

@@ -7,5 +7,8 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :conditions
   has_many :medications
+
+
+  accepts_nested_attributes_for :medications
   
 end

@@ -21,7 +21,7 @@ describe "medication" do
       fill_in 'Dose', with: '2mg'
       click_button 'Create Medication'
 
-      expect(page).to have_content '2mg'
+      find_field('medication_dose').value.should eq '2mg'
     end
   end
 end
