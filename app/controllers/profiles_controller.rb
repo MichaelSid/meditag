@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
 
+  before_action :authenticate_user!, except: [:show]
+  
   def new
     @profile = Profile.new
   end
@@ -23,7 +25,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = current_user.profile || current_user.profile.new
+    @profile = current_user.profile || Profile.new(user: current_user)
   end
 
   def update

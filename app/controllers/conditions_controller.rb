@@ -1,5 +1,7 @@
 class ConditionsController < ApplicationController
 
+	before_action :authenticate_user!, except: [:show]
+
 	def index
 		@conditions = Condition.all
 	end

@@ -1,5 +1,7 @@
 class MedicationsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:show]
+
   def index
     @medications = current_user.medications.all
   end
