@@ -14,3 +14,11 @@
 	margin-bottom: 10px;
 }
 
+body {
+  counter-reset: section;
+}
+
+#user_medications_attributes_0_medication:before {
+  counter-increment: section;
+  content: counter(section)" ";
+}

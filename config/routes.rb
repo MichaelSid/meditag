@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resource :user, only: [:update]
   resources :conditions
   resources :medications
+  resource :gpdetail
 
 
 
