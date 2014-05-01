@@ -6,7 +6,7 @@ describe "User profile page" do
       login_as create(:user)
       visit '/profile/edit'
 
-      expect(page).to have_content 'Your Information'
+      expect(page).to have_content 'My Profile'
     end
   end
 
@@ -32,7 +32,7 @@ describe "User profile page" do
     click_button 'Create Profile'      
 
     expect(current_path).to eq "/profile/edit"
-    expect(page).to have_content 'London'
+    expect(find_field('profile[town]').value).to eq 'London'
     end
 
     context 'editing profile' do 

@@ -31,7 +31,7 @@ describe "GP details page" do
     click_button 'Update'      
 
     expect(current_path).to eq "/gpdetail/edit"
-    expect(page).to have_content 'Hannibal'
+    expect(find_field('First Name').value).to eq 'Hannibal'
     end
 
     context 'editing profile' do 
