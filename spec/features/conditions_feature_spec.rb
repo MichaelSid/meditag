@@ -11,22 +11,23 @@ before do
 	end
 
 	it 'should display a button for adding conditions' do
-		expect(page).to have_selector(:link_or_button, 'Add a condition')
+		expect(page).to have_selector(:link_or_button, 'Add')
 	end
 
 	context 'Empty by default, no conditions have been added' do
-		it 'should display a message' do
-			expect(page).to have_content 'No conditions added'
+		xit 'should have two empty fields' do
+			find_field('user_conditions_attributes_0_condition').should eq nil
+			expect(condition.notes).to be_empty
 		end
 	end
 
 	describe 'Adding a condition' do
-		it 'should be listed in the form' do
-			click_button 'Add a condition'
-			fill_in 'Condition', with: 'Diabetes'
-			fill_in 'Notes', with: 'Diabetes sucks!'
-			click_button 'Create Condition'
-			expect(current_path).to eq '/conditions'
+		it 'should be listed in the form', js: true do
+			page.find('.add_fields').click
+			fill_in 'user_conditions_attributes_0_condition', with: 'Diabetes'
+			fill_in 'user_conditions_attributes_0_notes', with: 'Diabetes sucks!'
+			click_button 'Save Conditions'
+			expect(current_path).to eq '/conditions/new'
 			expect(page).to have_content "Diabetes"
 		end
 	end
