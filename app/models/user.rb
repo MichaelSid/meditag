@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :conditions
   has_many :medications
+  has_one :gpdetail
 
 
   accepts_nested_attributes_for :medications, :conditions, allow_destroy: true
