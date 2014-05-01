@@ -4,13 +4,6 @@ describe "medication", :js => true do
   let(:rick) { create(:user) }
   before { login_as rick }
   
-  context 'no medication added' do
-   
-    it 'should show a message' do
-      visit '/medications'
-      expect(page).to have_content "You don't take any medication :)"
-    end
-  end
 
   context 'adding medication' do 
     before do 
