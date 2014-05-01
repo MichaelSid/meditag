@@ -17,17 +17,17 @@ describe "User profile page" do
     login_as rick
     visit '/profile/new'
 
-    fill_in 'First Name', with: "John"
-    fill_in 'Last Name', with: "Smith"
-    fill_in 'D.O.B', with: "28-04-1988"
-    fill_in 'Contact Number', with: "0800123456"
-    fill_in 'Address Line 1', with: "15"
-    fill_in 'Address Line 2', with: "A road"
-    fill_in 'Town', with: "London"
-    fill_in 'County', with: "Sussex"
-    fill_in 'Country', with: "England"
-    fill_in 'Postcode', with: "sw14g"
-    fill_in 'Gender', with: "male"
+    fill_in 'profile_firstname', with: "John"
+    fill_in 'profile_lastname', with: "Smith"
+    fill_in 'profile_dob', with: "28-04-1988"
+    fill_in 'profile_contactnr', with: "0800123456"
+    fill_in 'profile_address1', with: "15"
+    fill_in 'profile_address2', with: "A road"
+    fill_in 'profile_town', with: "London"
+    fill_in 'profile_county', with: "Sussex"
+    fill_in 'profile_country', with: "England"
+    fill_in 'profile_postcode', with: "sw14g"
+    fill_in 'profile_gender', with: "male"
 
     click_button 'Create Profile'      
 
@@ -43,7 +43,7 @@ describe "User profile page" do
 
       it 'should update the profile' do 
         visit '/profile/edit'
-        fill_in 'Last Name', with: 'Brown'
+        fill_in 'profile_lastname', with: 'Brown'
         click_button 'Update Profile'
         expect(current_path).to eq "/profile/edit"
         find_field('profile_lastname').value.should eq 'Brown'
