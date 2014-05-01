@@ -11,9 +11,10 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
 
     if @profile.save
-      redirect_to "/profile"
+      flash[:notice] = "Success"
+      redirect_to "/profile/edit"
     else
-      render 'new'
+      render 'update'
     end
   end
 

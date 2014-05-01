@@ -16,6 +16,7 @@ describe "User profile page" do
     it 'displays all the information entered by user' do
     login_as rick
     visit '/profile/new'
+
     fill_in 'profile[firstname]', with: "John"
     fill_in 'profile[lastname]', with: "Smith"
     fill_in 'profile[dob]', with: "28-04-1988"
@@ -30,7 +31,7 @@ describe "User profile page" do
 
     click_button 'Create Profile'      
 
-    expect(current_path).to eq "/profile"
+    expect(current_path).to eq "/profile/edit"
     expect(page).to have_content 'London'
     end
 
@@ -43,6 +44,7 @@ describe "User profile page" do
       it 'should update the profile' do 
         visit '/profile/edit'
         fill_in 'profile[lastname]', with: 'Brown'
+
         click_button 'Update Profile'
         expect(current_path).to eq "/profile/edit"
         find_field('profile_lastname').value.should eq 'Brown'

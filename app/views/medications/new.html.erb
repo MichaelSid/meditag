@@ -1,14 +1,16 @@
-<h2>My Medications</h2>
-<br>
+<div class="col-md-8">
+  <h2>My Medications</h2>
+  <br>
 
-<%# current_user.id %>
-<%= form_for current_user, html: { class: "form-inline" } do |f| %> </p>
-	<%= f.fields_for :medications  do |med_fields| %>
-			<%= render 'medication_fields', f: med_fields %>
-	<% end %>
+  <%# current_user.id %>
+  <%= form_for current_user, html: { class: "form-inline" } do |f| %> </p>
+  	<%= f.fields_for :medications  do |med_fields| %>
+  			<%= render 'medication_fields', f: med_fields %>
+  	<% end %>
 
- 	<p><%= link_to_add_fields "<span class='glyphicon glyphicon-plus'></span> Add".html_safe, f, :medications %></p>
- 	<br><br>
-  <p><%= f.submit 'Save Medications', class: 'btn btn-success' %></p>
-<% end %>
+   	<p><%= link_to_add_fields "<span class='glyphicon glyphicon-plus'></span> Add".html_safe, f, :medications %></p>
+   	<br><br>
+    <p><%= f.submit 'Save Medications', class: 'btn btn-success' %></p>
+  <% end %>
+</div>
 

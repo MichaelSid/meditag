@@ -3,10 +3,12 @@ class MedicationsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
+    flash[:notice] = "hello!"
     @medications = current_user.medications.all
   end
 
   def new
+    flash[:notice] = "hello!"
     authenticate_user!
     
     current_user.medications.new if current_user.medications.none?

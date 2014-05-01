@@ -15,12 +15,21 @@ class ConditionsController < ApplicationController
 	# 	@condition = Condition.new(condition_params)
 	# 	@condition.user = current_user
 
+
  #    if @condition.save
  #      redirect_to "/conditions"
  #    else
  #      render 'new'
  #    end
 	# end
+
+ #   if @condition.save
+ #     redirect_to "/conditions"
+ #   else
+ #     render 'new'
+ #   end
+ #   
+ #  end
 
 	# def show
 	# 	@condition = current_user.conditions.find params[:id]

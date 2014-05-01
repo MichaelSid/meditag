@@ -8,21 +8,28 @@
 </head>
 <body>
 
-
 <%= render 'layouts/header' %>
 
     <div id="wrapper">
       <div id="page-wrapper">
-        <div class="row">
-          <div class="col-lg -12">
-            
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+        <div class="container">
+          
+          <% if notice %>
+          <div class="col-md-12">
+            <div class="alert alert-info"><%= notice %></div>
+          </div>
+          <% end %>
+
+          <% if alert %>
+          <div class="col-md-12">
+            <div class="alert alert-danger"><%= alert %></div>
+          </div>
+          <% end %>
           
           <%= yield %>
 
         </div>
-      </div><!-- /.row -->
+
     </div><!-- /#page-wrapper -->
   </div><!-- /#wrapper -->
 
