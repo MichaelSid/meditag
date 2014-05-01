@@ -1,3 +1,17 @@
-<h1>Enter New Condition</h1>
+<h2>My Conditions</h2>
+<br>
 
-<%= render 'form' %> 
+
+<%= form_for current_user, html: {class: "form-inline"} do |f| %> </p>
+
+	<%= f.fields_for :conditions do |cond_fields| %>
+		<%= render 'condition_fields', f: cond_fields %>
+	<% end %>
+
+	<p><%= link_to_add_fields "<span class='glyphicon glyphicon-plus'></span> Add".html_safe, f, :conditions %></p>
+	<br><br>
+  <p><%= f.submit 'Save Conditions', class: 'btn btn-success' %></p>
+
+<% end %>
+
+

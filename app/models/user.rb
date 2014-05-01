@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   has_many :medications
 
 
-  accepts_nested_attributes_for :medications, allow_destroy: true
+  accepts_nested_attributes_for :medications, :conditions, allow_destroy: true
   
 end
