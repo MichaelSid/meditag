@@ -31,7 +31,7 @@ describe "User profile page" do
 
     click_button 'Create Profile'      
 
-    expect(current_path).to eq "/profile"
+    expect(current_path).to eq "/profile/edit"
     expect(page).to have_content 'London'
     end
 

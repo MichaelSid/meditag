@@ -1,0 +1,2 @@
+module GpdetailsHelper
+end

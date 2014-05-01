@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429143442) do
+ActiveRecord::Schema.define(version: 20140501122642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,24 @@ ActiveRecord::Schema.define(version: 20140429143442) do
   end
 
   add_index "conditions", ["user_id"], name: "index_conditions_on_user_id", using: :btree
+
+  create_table "gpdetails", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "faxnumber"
+    t.string   "contactnr"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "town"
+    t.string   "county"
+    t.string   "country"
+    t.string   "postcode"
+    t.integer  "user_id"
+  end
+
+  add_index "gpdetails", ["user_id"], name: "index_gpdetails_on_user_id", using: :btree
 
   create_table "medications", force: true do |t|
     t.string   "medication"
