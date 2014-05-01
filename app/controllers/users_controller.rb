@@ -2,8 +2,7 @@ class UsersController < ApplicationController
 
 	def update
 		authenticate_user!
-
-		if current_user.update(user_params)
+		if current_user.update!(user_params)
 			redirect_to :back
 		end
 	end

@@ -7,7 +7,7 @@ before do
 	 login_as @alex
 	 create(:profile, user: @alex)
 
-	 visit '/conditions'
+	 visit '/conditions/new'
 	end
 
 	it 'should display a button for adding conditions' do
@@ -21,8 +21,8 @@ before do
 	end
 
 	describe 'Adding a condition' do
-		it 'should be listed on the index' do
-			click_link 'Add a condition'
+		it 'should be listed in the form' do
+			click_button 'Add a condition'
 			fill_in 'Condition', with: 'Diabetes'
 			fill_in 'Notes', with: 'Diabetes sucks!'
 			click_button 'Create Condition'

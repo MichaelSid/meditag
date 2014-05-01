@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :medications
 
 
-  accepts_nested_attributes_for :medications, :conditions, allow_destroy: true
+  accepts_nested_attributes_for :medications, reject_if: lambda { |c| c[:medication].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :conditions, reject_if: lambda { |c| c[:conditon].blank? }, allow_destroy: true
   
 end
