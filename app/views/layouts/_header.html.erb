@@ -26,10 +26,9 @@
     <ul class="nav navbar-nav navbar-right navbar-user">
       <li class="dropdown user-dropdown">
 
-        <% render '/layouts/displayusername' %>
+        <%= render '/layouts/displayusername' %>
 
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 
-          <% @profile_name %>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"> <%= @profile_name %> </i> 
           <b class="caret"></b></a>
         <ul class="dropdown-menu">
 
