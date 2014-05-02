@@ -1,3 +1,37 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+nav {
+	width: 100%;
+}
+
+.main {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 50px;
+	margin-top: 12px;
+	background-color: white;
+	text-align: center;
+}
+
+button {
+	border-radius: 3px;
+	background-color: #c0deed;
+	outline: none;
+	border: none;
+	border-shadow: none;
+	width: 30%;
+}
+
+.sign-up-buttons button {
+	min-width: 175px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.info-text button {
+	min-width: 175px;
+	text-align: center;
+}

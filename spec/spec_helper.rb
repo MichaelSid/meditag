@@ -71,3 +71,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+
+def full_current_path
+  uri = URI.parse(current_url)
+  "#{uri.path}#{"?#{uri.query}" if uri.query}"
+end

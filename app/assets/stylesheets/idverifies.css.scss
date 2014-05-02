@@ -1,0 +1,22 @@
+// Place all the styles related to the idverifies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+uuid {
+  width: 80%;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+}
+
+div #uuid-text {
+    width: 50%;
+    height: 200px;
+    float: left;
+}
+
+div #uuid-submit {
+    margin-left: 20%;
+    height: 200px;
+    float: left;
+}

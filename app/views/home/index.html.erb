@@ -1,11 +1,60 @@
-<%= render '/layouts/displayusername' %>
-
-<p>Welcome, <%= @profile_name %> </p>
-
-<% if user_signed_in? %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign up', new_user_registration_path %>
-  <%= link_to 'Sign in', new_user_session_path %>
-<% end %>
-
+<!DOCTYPE html5>
+<head>
+	<link rel="shortcut icon" type="image/png" href="public/favicon.ico"/>
+	<link href='http://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
+	<title>Medicode Medical Data Device</title>
+	<link rel="stylesheet" href="stylesheets/home.css.scss" type="text/css"/>   
+</head>
+<body>
+	<div class="main">
+		<span class="main-info">
+			Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed; you can simply update your information online.
+			<br>
+		</span>
+		<br>
+			<div class="sign-up-buttons">
+				<button id="patient-info">
+					Take me to Patient Profile info
+				</button>
+				<button id="gp-info">
+					Take me to GP Profile info
+				</button>
+				<button id="emergency-info">
+					Take me to Emergency Services Profile info
+				</button>
+			</div>
+			<div class="info-text">
+				<span class="patient">
+					<h1>Signing up with a Patient Profile</h1>
+					<span>Signing up with a Patient profile gives you 24&#47 7 instant access to your own medical information, as customised by you.  The site gives you the ability to add or remove illnesses, allergies, and any current medication in order to ensure the best possible care in case of emergency</span>
+					<br>
+					<br>
+					<button id="sign-up-patient">
+						Sign up as Patient
+					</button>
+					<br>
+				</span>
+				<span class="gp">
+					<h1>Signing up with a GP Profile</h1>
+					<span>Signing up as a General Practitioner allows doctors to track patients&#39 illnesses and medication in a secure way, in particular facilitating tracking of medical records when a patient changes GP.</span>
+					<br>
+					<br>
+					<button id="sign-up-gp">
+						Sign up as GP
+					</button>
+					<br>
+				</span>
+				<span class="emergency">
+					<h1>Signing up as an Emergency Healthcare Professional</h1>
+					<span>Signing up as Emergency healthcare professional gives you the ability to see a patient&#39s most important medical information instantly in case of emergency.  This reduces risk of ADRs when administering emergency medications, and provides vital information about a patient&#39s medical condition.</span>
+					<br>
+					<br>
+					<button id-"sign-up-emergency">
+						Sign up as Emergency Healthcare Professional
+					</button>
+					<br>
+				</span>
+			</div>
+		</div>
+	</div>
+</body>
