@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'static_pages/contact'
+
+  get 'static_pages/about'
+
+  get 'static_pages/faq'
+
   devise_for :users, controllers: { :registrations => "registration" }
   
   root 'home#index'
