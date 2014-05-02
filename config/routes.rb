@@ -10,11 +10,6 @@ Rails.application.routes.draw do
   resource :gpdetail
   resource :idverify
 
-  get '/idverify/new?tag-uuid=:qruuid' => 'idverifies#new', as: :qruuid
-
-
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,7 +1,6 @@
 class IdverifiesController < ApplicationController
 
   def new
-    #puts qruuid
+    @uuid = params['tag-uuid']
   end
-
 end
