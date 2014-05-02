@@ -12,6 +12,6 @@
 	
   
 	<%= f.hidden_field :_destroy %>
-  <%= link_to "<span class='glyphicon glyphicon-trash'></span> ".html_safe, '#', class: "remove_fields" %>
+  <%= link_to "<span class='glyphicon glyphicon-trash'></span> ".html_safe, '#', class: "remove_fields", rel: 'tooltip', placement: 'top', title: 'Delete' %>
 
 </fieldset>
