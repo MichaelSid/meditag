@@ -4,7 +4,7 @@ describe 'emergency page' do
 
   context 'general info' do
     before do
-      create(:user, uuid: 'hdd', profile: create(:profile), medications: [create(:medication)], conditions: [create(:asthma), create(:condition)])
+      create(:user, uuid: 'hdd', profile: create(:profile), medications: [create(:medication)], conditions: [create(:asthma), create(:conditions)])
     end
 
     it "shows firstname" do
