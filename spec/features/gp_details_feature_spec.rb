@@ -47,12 +47,7 @@ describe "GP details page" do
         fill_in 'gpdetail_lastname', with: 'Lecter'
         click_button 'Update'
         expect(current_path).to eq "/gpdetail/edit"
-<<<<<<< HEAD
         find_field('gpdetail_lastname').value.should eq 'Lecter'
-=======
-         find_field('gpdetail_lastname').value.should eq 'Lecter'
->>>>>>> ef478480dca606953dfd56964d8c70d7dc8615e6
-
       end
     end
   end
