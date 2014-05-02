@@ -11,18 +11,18 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand"><img src="http://i.imgur.com/RXlmyBA.png" height="67" width="240"></a>
-    <a class="faq-link">FAQ</a>
+    <a href="/"><img src="http://i.imgur.com/RXlmyBA.png" height="67" width="240"></a>
+    <div id="text" style="clear:left;">MEDICAL DATA DEVICE</div>
+    <div class="links"><a class="faq-link">FAQ</a>
     <a class="contact-link">Contact Us</a>
     <%= render '/layouts/displayusername' %>
       <% if user_signed_in? %>
-        <p>Welcome, <%= @profile_name %> </p>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to 'Sign up', new_user_registration_path %>
-        <%= link_to 'Sign in', new_user_session_path %>
+        <%= link_to 'Sign Up', new_user_registration_path %>
+        <%= link_to 'Sign In', new_user_session_path %>
     <% end %>
-    <div id="text">MEDICAL DATA DEVICE</div>
+    </div>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->

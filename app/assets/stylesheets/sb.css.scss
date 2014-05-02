@@ -16,29 +16,38 @@ body {
 
 nav div {
   color: white;
-  height: 70px;
+  height: 75px;
 }
 
-nav a {
-  padding: 20px;  
-  margin-top: -10px;
-  margin-left: -1px;
+img {  
+  height: 57px;
+  width: 243px;
   float: left;
+  margin-bottom: -10px;
+  margin-left: 8px;
 }
 
-#faq-link {
+.links {
+  float: right;
+  text-align: right;
+  margin-left: 50px;
+  height: 15px;
+}
+
+.contact-link {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.faq-link {
+  margin-left: 100px;
+}
+
+#text {
   float: left;
-}
-
-#contact-link {
-  float: left;
-}
-
-nav #text {
-  margin-left: 17px;
-  margin-top: 50px;
   font-family: 'Syncopate', sans-serif;
   height: 20px;
+  margin-left: 10px;
 }
 
 #wrapper {

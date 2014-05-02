@@ -6,13 +6,32 @@ nav {
 	width: 100%;
 }
 
-body {
-	font-family: 'Syncopate', sans-serif;
+.main {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 50px;
+	margin-top: 12px;
+	background-color: white;
+	text-align: center;
 }
 
-.main {
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 50px;
+button {
+	border-radius: 3px;
+	background-color: #c0deed;
+	outline: none;
+	border: none;
+	border-shadow: none;
+}
+
+.sign-up-buttons button {
+	width: 30%;
+	min-width: 50px;
+	text-align: center;
+}
+
+.info-text button {
+	width: 30%;
+	min-width: 50px;
+	text-align: center;
 }
