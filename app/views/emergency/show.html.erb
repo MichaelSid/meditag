@@ -1,0 +1,32 @@
+<%= @user.profile.firstname %>
+
+<%= @user.profile.lastname %>
+
+<%= @user.profile.dob %>
+
+<%= @user.profile.contactnr %>
+
+<%= @user.profile.address1 %>
+
+<%= @user.profile.address2 %>
+
+<%= @user.profile.town %>
+
+<%= @user.profile.county %>
+
+<%= @user.profile.country %>
+
+<%= @user.profile.postcode %>
+
+<%= @user.profile.gender %>
+
+
+<% @user.medications.each do |med| %>
+  <%= med.medication %>
+  <%= med.dose %>
+<% end %>
+
+<% @user.conditions.each do |con| %>
+  <%= con.condition %>
+  <%= con.notes %>
+<% end %>

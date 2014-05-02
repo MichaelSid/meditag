@@ -9,4 +9,5 @@ describe "sign up" do
     click_button 'Sign Up'
     expect(current_path).to eq '/profile/new'
   end
+
 end

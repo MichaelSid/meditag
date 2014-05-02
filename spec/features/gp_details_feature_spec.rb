@@ -17,8 +17,10 @@ describe "GP details page" do
     login_as rick
     visit '/gpdetail/new'
 
-    fill_in 'First Name', with: "Hannibal"
-    fill_in 'Last Name', with: "Lecter"
+
+
+    fill_in 'gpdetail_firstname', with: "Hannibal"
+    fill_in 'gpdetail_lastname', with: "Lecter"
     fill_in 'Fax Number', with: "28-04-1988"
     fill_in 'Contact Number', with: "0800123456"
     fill_in 'Address Line 1', with: "15"
@@ -31,7 +33,7 @@ describe "GP details page" do
     click_button 'Update'      
 
     expect(current_path).to eq "/gpdetail/edit"
-    expect(find_field('First Name').value).to eq 'Hannibal'
+    expect(find_field('gpdetail_firstname').value).to eq 'Hannibal'
     end
 
     context 'editing profile' do 
@@ -42,9 +44,10 @@ describe "GP details page" do
 
       it 'should update the Gp details' do 
         visit '/gpdetail/edit'
-        fill_in 'Last Name', with: 'Lecter'
+        fill_in 'gpdetail_lastname', with: 'Lecter'
         click_button 'Update'
         expect(current_path).to eq "/gpdetail/edit"
+        save_and_open_page
         find_field('gpdetail_lastname').value.should eq 'Lecter'
 
       end

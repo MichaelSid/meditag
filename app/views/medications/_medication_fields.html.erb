@@ -4,6 +4,18 @@
   <%= f.text_field :medication, placeholder: "Medication", class: 'form-control medication-field' %> 
 
   <%= f.text_field :dose, placeholder: "Dose", class: 'form-control dose-field' %> 
+
+  <%= f.check_box :emergency, class: 'emergency-field' %>
+
+  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+
+  
+<!-- 	<div class="checkboxFour">
+		<div hover="text">hover me</div>
+	  <%= f.check_box :emergency, class: 'emergency-field' %> 
+	  <%= f.label :emergency, '&nbsp;'.html_safe, class: 'emergency-field' %> 
+	</div> -->
+	
   
 	<%= f.hidden_field :_destroy %>
   <%= link_to "<span class='glyphicon glyphicon-trash'></span> ".html_safe, '#', class: "remove_fields" %>
