@@ -1,60 +1,49 @@
 <%= form_for @profile, url: profile_path do |f| %>
 
-<div class="input-group">
-   <span class="input-group-addon">Firstname</span>
-  <%= f.text_field :firstname, required: true, class: 'form-control' %>
+<div class="form-group">
+  <%= f.text_field :firstname, required: true, placeholder: 'Firstname', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">Lastname</span>
-  <%= f.text_field :lastname, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :lastname, required: true, placeholder: 'Lastname', class: 'form-control' %>
 </div>
-<br>
-  <div class="input-group">
-   <span class="input-group-addon">Date of Birth</span>
-  <%= f.date_field :dob, required: true, class: 'form-control' %>
+
+  <div class="form-group">
+  <%= f.date_field :dob, required: true, placeholder: 'Date of Birth', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">Contact Number</span>
-  <%= f.text_field :contactnr, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :contactnr, required: true, placeholder: 'Contact Number', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">Address 1</span>
-  <%= f.text_field :address1, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :address1, required: true, placeholder: 'Address Line 1', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">Address 2</span>
-  <%= f.text_field :address2, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :address2, required: true, placeholder: 'Address Line 2', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">Town</span>
-  <%= f.text_field :town, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :town, required: true, placeholder: 'Town', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">County</span>
-  <%= f.text_field :county, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :county, required: true, placeholder: 'County', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">Country</span>
-  <%= f.text_field :country, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :country, required: true, placeholder: 'Country', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">Postcode</span>
-  <%= f.text_field :postcode, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :postcode, required: true, placeholder: 'Postcode', class: 'form-control' %>
 </div>
-<br>
-<div class="input-group">
-   <span class="input-group-addon">Gender</span>
-  <%= f.text_field :gender, required: true, class: 'form-control' %>
+
+<div class="form-group">
+  <%= f.text_field :gender, required: true, placeholder: 'Gender', class: 'form-control' %>
 </div>
-<br>
-  <%= f.submit class: 'btn btn-success' %> </p>
+
+<%= f.submit class: 'btn btn-success' %> </p>
 
 <%end%>
