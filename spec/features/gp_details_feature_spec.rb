@@ -17,24 +17,24 @@ describe "GP details page" do
     login_as rick
     visit '/gpdetail/new'
 
-
-
     fill_in 'gpdetail_firstname', with: "Hannibal"
     fill_in 'gpdetail_lastname', with: "Lecter"
-    fill_in 'Fax Number', with: "28-04-1988"
-    fill_in 'Contact Number', with: "0800123456"
-    fill_in 'Address Line 1', with: "15"
-    fill_in 'Address Line 2', with: "A road"
-    fill_in 'Town', with: "London"
-    fill_in 'County', with: "Sussex"
-    fill_in 'Country', with: "England"
-    fill_in 'Postcode', with: "sw14g"
+    fill_in 'gpdetail_faxnumber', with: "28-04-1988"
+    fill_in 'gpdetail_contactnr', with: "0800123456"
+    fill_in 'gpdetail_address1', with: "15"
+    fill_in 'gpdetail_address2', with: "A road"
+    fill_in 'gpdetail_town', with: "London"
+    fill_in 'gpdetail_county', with: "Sussex"
+    fill_in 'gpdetail_country', with: "England"
+    fill_in 'gpdetail_postcode', with: "sw14g"
+
 
     click_button 'Update'      
 
     expect(current_path).to eq "/gpdetail/edit"
     expect(find_field('gpdetail_firstname').value).to eq 'Hannibal'
     end
+
 
     context 'editing profile' do 
       before do
@@ -47,7 +47,11 @@ describe "GP details page" do
         fill_in 'gpdetail_lastname', with: 'Lecter'
         click_button 'Update'
         expect(current_path).to eq "/gpdetail/edit"
+<<<<<<< HEAD
         find_field('gpdetail_lastname').value.should eq 'Lecter'
+=======
+         find_field('gpdetail_lastname').value.should eq 'Lecter'
+>>>>>>> ef478480dca606953dfd56964d8c70d7dc8615e6
 
       end
     end
