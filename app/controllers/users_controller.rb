@@ -10,6 +10,6 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params[:user].permit(medications_attributes: [:id, :medication, :dose, :_destroy], conditions_attributes: [:id, :condition, :notes, :_destroy])
+		params[:user].permit(medications_attributes: [:id, :medication, :dose, :emergency, :_destroy], conditions_attributes: [:id, :condition, :notes, :emergency, :_destroy])
 	end
 end

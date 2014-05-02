@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :gpdetail do
   	firstname "Hannibal"
     lastname "Lecter"
-    fax "28-04-1988"
+    faxnumber "28-04-1988"
     contactnr "0800123456"
     address1 "15"
     address2 "A road"
