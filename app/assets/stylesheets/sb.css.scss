@@ -23,12 +23,22 @@ nav a {
   padding: 20px;  
   margin-top: -10px;
   margin-left: -1px;
+  float: left;
+}
+
+#faq-link {
+  float: left;
+}
+
+#contact-link {
+  float: left;
 }
 
 nav #text {
   margin-left: 17px;
   margin-top: 50px;
   font-family: 'Syncopate', sans-serif;
+  height: 20px;
 }
 
 #wrapper {

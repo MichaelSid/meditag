@@ -6,17 +6,6 @@
 	<link rel="stylesheet" href="stylesheets/home.css.scss" type="text/css"/>   
 </head>
 <body>
-	<nav>
-		<%= render '/layouts/displayusername' %>
-			<% if user_signed_in? %>
-				<p>Welcome, <%= @profile_name %> </p>
-			  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-			<% else %>
-			  <%= link_to 'Sign up', new_user_registration_path %>
-			  <%= link_to 'Sign in', new_user_session_path %>
-		<% end %>
-		Rest of Navbar - should contain FAQs and Contact Details?  Also login and logout
-	</nav>
 	<div class="main">
 		<span class="main-info">
 			Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed; you can simply update your information online.
