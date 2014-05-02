@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :conditions
   resources :medications
   resource :gpdetail
+  resource :idverify
+
+  get '/idverify/new?tag-uuid=:qruuid' => 'idverifies#new', as: :qruuid
 
 
 
