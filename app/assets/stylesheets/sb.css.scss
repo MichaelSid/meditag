@@ -11,7 +11,24 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 /* Global Styles */
 
 body {
+  margin-top: 75px;
+}
+
+nav div {
+  color: white;
+  height: 70px;
+}
+
+nav a {
+  padding: 20px;  
+  margin-top: -10px;
+  margin-left: -1px;
+}
+
+nav #text {
+  margin-left: 17px;
   margin-top: 50px;
+  font-family: 'Syncopate', sans-serif;
 }
 
 #wrapper {
@@ -98,14 +115,15 @@ table.tablesorter thead tr th:hover {
   .side-nav {
   margin-left: -225px;
   left: 0px;
-  width: 225px;
+  width: 250px;
   position: fixed;
-  top: 50px;
+  top: 70px;
   height: 100%;
   border-radius: 0;
   border: none;
-  background-color: #222222;
+  background-color: #2C4762;
   overflow-y: auto;
+  padding-top: 15px;
   }
 
   /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
@@ -156,6 +174,7 @@ table.tablesorter thead tr th:hover {
   .navbar-collapse {
     padding-left: 15px !important;
     padding-right: 15px !important;
+    background-color: #2C4762;
   }
 
 }

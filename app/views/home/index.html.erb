@@ -1,29 +1,22 @@
 <!DOCTYPE html5>
 <head>
-	<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+	<link rel="shortcut icon" type="image/png" href="public/favicon.ico"/>
 	<link href='http://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
-	<div class="header">
-		<title>Medicode Medical Data Device</title>
-	</div>
-	<link rel="stylesheet" href="css/medicode_home.css.scss" type="text/css"/>   
+	<title>Medicode Medical Data Device</title>
+	<link rel="stylesheet" href="stylesheets/home.css.scss" type="text/css"/>   
 </head>
 <body>
 	<nav>
 		<%= render '/layouts/displayusername' %>
-			<p>Welcome, <%= @profile_name %> </p>
 			<% if user_signed_in? %>
+				<p>Welcome, <%= @profile_name %> </p>
 			  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 			<% else %>
 			  <%= link_to 'Sign up', new_user_registration_path %>
 			  <%= link_to 'Sign in', new_user_session_path %>
 		<% end %>
-		<div id="logo"><img src="images/medicode-logo.png" height="62" width="235"></div>
-		<div id="text">MEDICAL DATA DEVICE</div>
-		<div class="topbar">Rest of Navbar - should contain FAQs and Contact Details?  Also login and logout</div>
+		Rest of Navbar - should contain FAQs and Contact Details?  Also login and logout
 	</nav>
-	<div class="sidebar">
-		Sidebar - not sure what this should contain, as each type of user would have different things, right?  Maybe for now put the patient tabs in, i.e. medications, conditions, profile etc. but greyed out so it's clear you can't click on them until you've signed up?
-	</div>
 	<div class="main">
 		<span class="main-info">
 			Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed; you can simply update your information online.
