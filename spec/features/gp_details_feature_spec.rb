@@ -28,6 +28,7 @@ describe "GP details page" do
     fill_in 'gpdetail_country', with: "England"
     fill_in 'gpdetail_postcode', with: "sw14g"
 
+
     click_button 'Update'      
 
     expect(current_path).to eq "/gpdetail/edit"
@@ -46,7 +47,7 @@ describe "GP details page" do
         fill_in 'gpdetail_lastname', with: 'Lecter'
         click_button 'Update'
         expect(current_path).to eq "/gpdetail/edit"
-        find_field('gpdetail_lastname').value.should eq 'Lecter'
+         find_field('gpdetail_lastname').value.should eq 'Lecter'
 
       end
     end
