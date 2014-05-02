@@ -17,7 +17,8 @@ describe 'QRCode registration page' do
   end
 
   describe 'Checking QRCode uuid against database' do
-
+    
+    let(:rick) { create(:user) }
     before do
       @uuid = SecureRandom.uuid
       @qrpath = '/idverify/new?tag-uuid=' + @uuid
@@ -31,9 +32,18 @@ describe 'QRCode registration page' do
     end
   
     context 'check uuid against database' do
-      it 'should show flash message if uuid already assigned' do
-        expect(page).to have_content 'ID already assigned to user'
+      it 'should show flash message if uuid not already assigned' do
+        expect(page).to have_content 'ID not assigned to user'
       end
     end
+
+      it 'display flash message if uuid IS assigned to user' do
+        user = User.find(rick)
+        #user.uuid = @uuid.to_s
+        user.update(uuid: @uuid.to_s)
+        user.save
+        visit @qrpath
+        expect(page).to have_content 'ID already assigned to user'
+      end
   end
 end
