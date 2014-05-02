@@ -6,9 +6,12 @@
 
   <%= f.text_area :notes, placeholder: "Notes", class: 'form-control notes-field' %> 
 
+  <%= f.check_box :emergency, class: 'emergency-field' %> 
+
 
   
   <%= f.hidden_field :_destroy %>
+
   <%= link_to "<span class='glyphicon glyphicon-trash'></span> ".html_safe, '#', class: "remove_fields" %>
 
 
