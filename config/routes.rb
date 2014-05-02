@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :conditions
   resources :medications
   resource :gpdetail
+  resources :emergency
 
 
 

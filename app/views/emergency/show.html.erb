@@ -1,0 +1,13 @@
+<%= @user.profile.firstname %>
+
+<%= @user.profile.lastname %>
+
+<% @user.medications.each do |med| %>
+  <%= med.medication %>
+  <%= med.dose %>
+<% end %>
+
+<% @user.conditions.each do |con| %>
+  <%= con.condition %>
+  <%= con.notes %>
+<% end %>
