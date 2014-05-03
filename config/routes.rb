@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   resources :medications
   resource :gpdetail
   resources :emergency
-  resource :idverify
+  resource :idverify do
+    collection do 
+      get :verify
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
