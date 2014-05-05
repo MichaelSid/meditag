@@ -2,25 +2,25 @@
 <html>
 <head>
   <link rel="shortcut icon" type="image/png" href="public/favicon.ico"/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <meta charset="utf-8" />
   <title>Home</title>
 </head>
 <body>
-
-    <section id="summary" data-type="background" data-speed="10" class="pages">     
+    <div id="summary">     
       <article>About the Tag</article>
       <h2>"Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed; you can simply update your information online."</h2>
-    </section>   
+    </div>   
 
-    <section id="patient" data-type="background" data-speed="10" class="pages">
+    <div id="patient">
       <article>Signing up as a Patient</article>
       <h2>"Signing up with a Patient profile gives you 24/7 instant access to your own medical information, as customised by you.  The site gives you the ability to add or remove illnesses, allergies, and any current medication in order to ensure the best possible care in case of emergency"</h2>
       <br>
       <%= button_to "Sign Up As Patient", :controller => "registration", :action => "new", :method => :get %>
       <br>
-    </section>
+    </div>
 
-    <section id="gp" data-type="background" data-speed="10" class="pages">
+    <div id="gp">
       <article>Signing up as a GP</article>
       <h2>"Signing up as a General Practitioner allows doctors to track patients' illnesses and medication in a secure way, in particular facilitating tracking of medical records when a patient changes GP."</h2>
       <br>
@@ -28,17 +28,29 @@
           Sign up as GP
         </button>
       <br>
-    </section>
+    </div>
 
-    <section id="emergency" data-type="background" data-speed="10" class="pages">
-      <article>Signing up as a Patient</article>
+    <div id="emergency">
+      <article>Signing up as an Emergency Healthcare Professional</article>
       <h2>"Signing up as Emergency healthcare professional gives you the ability to see a patient's most important medical information instantly in case of emergency.  This reduces risk of ADRs when administering emergency medications, and provides vital information about a patient's medical condition."</h2>
       <br>
         <button id="sign-up-emergency">
           Sign up as Emergency Healthcare Professional
         </button>
       <br>
-    </section>
-
+    </div>
+  <script>
+    	$(window).bind('scroll',function(e){
+   			parallaxScroll();
+   		});
+ 
+   		function parallaxScroll(){
+   		var scrolledY = $(window).scrollTop();
+				$('.summary').css('background-position','center -'+((scrolledY*0.2))+'px');
+				$('.patient').css('top','-'+((scrolledY*0.4))+'px');
+				$('.gp').css('top','-'+((scrolledY*0.6))+'px');
+				$('.emergency').css('top','-'+((scrolledY*0.8))+'px');
+   		};
+	</script>
 </body>
 </html>
