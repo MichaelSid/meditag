@@ -1,4 +1,4 @@
-
+<% if @user.profile %>
 <p><%= @user.profile.firstname %></p>
 <p><%= @user.profile.lastname %></p>
 <p><%= @user.profile.dob %></p>
@@ -10,7 +10,7 @@
 <p><%= @user.profile.country %></p>
 <p><%= @user.profile.postcode %></p>
 <p><%= @user.profile.gender %></p>
-
+<% end %>
 
 <% @user.medications.each do |med| %>
   <p><%= med.medication %>
