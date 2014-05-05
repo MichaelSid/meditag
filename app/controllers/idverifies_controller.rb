@@ -12,8 +12,17 @@ class IdverifiesController < ApplicationController
   end
 
   def verification_functions
-    if verify_uuid_length? && uuid_assigned_to_user?
+    combined_check
+    if combined_check
+      flash[:notice] = 'UUID verified successfully'
+    else
+      flash[:notice] = 'Something went wrong. Please try again'
+    end
+  end
 
+  def combined_check
+    verify_uuid_length?
+    uuid_assigned_to_user?
   end
 
   def verify_uuid_length?

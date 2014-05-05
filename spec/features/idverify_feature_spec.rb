@@ -18,8 +18,11 @@ describe 'QRCode registration page' do
 
   describe 'Checking QRCode uuid against database' do
     
-    let(:rick) { create(:user) }
     before do
+      @rick = create(:user)
+      login_as @rick
+      create(:profile, user: @rick)
+
       @uuid = SecureRandom.uuid
       @qrpath = '/idverify/verify?tag-uuid=' + @uuid
       visit @qrpath
@@ -33,26 +36,35 @@ describe 'QRCode registration page' do
   
     context 'check uuid against database' do
       it 'should show flash message if uuid not already assigned' do
-        expect(page).to have_content 'ID not assigned to user'
+        expect(page).to have_content 'UUID verified successfully'
       end
     end
  
       it 'display flash message if uuid IS assigned to user' do
-        user = User.find(rick)
-        user.update(uuid: @uuid.to_s)
+        visit '/idverify/new'
+        user = User.find(@rick)
+        user.uuid = @uuid.to_s
         user.save
         visit @qrpath
-        expect(page).to have_content 'ID already assigned to user'
+        expect(page).to have_content 'Something went wrong. Please try again'
       end
   end
 
   describe 'Verify validity of uuid' do
+
     context 'uuid is invalid' do
       it 'it is invalid if not 36 chars long' do
         visit '/idverify/verify?tag-uuid=1234'
-        expect(page).to have_content 'Incorrect length'
+        expect(page).to have_content 'Something went wrong. Please try again'
       end
     end
+
+    context 'uuid is valid' do
+      it 'displays a verification successful message' do
+        expect(page).to have_content 'UUID verified successfully'
+      end
+    end
+
   end
 
 end
