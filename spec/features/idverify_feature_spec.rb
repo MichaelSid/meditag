@@ -21,7 +21,6 @@ describe 'QRCode registration page' do
     before do
       @rick = create(:user)
       login_as @rick
-      create(:profile, user: @rick)
 
       @uuid = SecureRandom.uuid
       @qrpath = '/idverify/verify?tag-uuid=' + @uuid
@@ -35,12 +34,7 @@ describe 'QRCode registration page' do
     end
   
     context 'check uuid against database' do
-      it 'should show flash message if uuid not already assigned' do
-        expect(page).to have_content 'UUID verified successfully'
-      end
-    end
- 
-      it 'display flash message if uuid IS assigned to user' do
+      it 'display flash message if uuid IS already assigned to a user' do
         visit '/idverify/new'
         user = User.find(@rick)
         user.uuid = @uuid.to_s
@@ -48,9 +42,18 @@ describe 'QRCode registration page' do
         visit @qrpath
         expect(page).to have_content 'Something went wrong. Please try again'
       end
+    end
+
   end
 
   describe 'Verify validity of uuid' do
+
+    before do
+      @rick = create(:user)
+      login_as @rick
+      @uuid = SecureRandom.uuid
+      visit '/idverify/verify?tag-uuid=' + @uuid
+    end
 
     context 'uuid is invalid' do
       it 'it is invalid if not 36 chars long' do
@@ -60,7 +63,12 @@ describe 'QRCode registration page' do
     end
 
     context 'uuid is valid' do
+
       it 'displays a verification successful message' do
+        @uuid2 = SecureRandom.uuid
+        visit '/idverify/new'
+        fill_in 'uuid-form', with: @uuid
+        click_button 'Submit'
         expect(page).to have_content 'UUID verified successfully'
       end
     end

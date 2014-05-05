@@ -11,7 +11,6 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
 
     if @profile.save
-      # Add uuid to user column here
       flash[:notice] = "Success"
       redirect_to "/profile/edit"
     else
