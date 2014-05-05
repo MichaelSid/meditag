@@ -1,37 +1,68 @@
-// Place all the styles related to the home controller here.
+// Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-nav {
-	width: 100%;
+/* Slide 2 */
+#slide-2 .bcg {background-image:url('../img/bcg_slide-2.jpg')}
+#slide-2 .hsContent {
+    margin-left: -450px;
+    top: auto;
+}
+#slide-2 h2 {
+    position: fixed;
+    top: 70%;
 }
 
-.main {
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
-	padding: 50px;
-	margin-top: 12px;
-	background-color: white;
-	text-align: center;
+/* Slide 4 */
+#slide-4 .bcg {background-image:url('../img/bcg_slide-4.jpg')}
+#slide-4 .hsContent {
+    margin-left: -450px;
+    position: fixed;
+    top: 250px;
+}
+#slide-4 h2 {
+    background: none;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-button {
-	border-radius: 3px;
-	background-color: #c0deed;
-	outline: none;
-	border: none;
-	border-shadow: none;
-	width: 30%;
-}
 
-.sign-up-buttons button {
-	min-width: 175px;
-	margin-bottom: 10px;
-	text-align: center;
-}
 
-.info-text button {
-	min-width: 175px;
-	text-align: center;
+
+
+
+#home { 
+  background: url(home-bg.jpg) 50% 0 repeat fixed; min-height: 1000px; 
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+}
+ 
+#home article { 
+  height: 458px; 
+  position: absolute; 
+  text-align: center; 
+  top: 150px; 
+  width: 100%; 
+}
+ 
+#about { 
+  background: url(about-bg.jpg) 50% 0 repeat fixed; min-height: 1000px; 
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+ 
+#about article { 
+  height: 458px; 
+  position: absolute; 
+  text-align: center; 
+  top: 150px; 
+  width: 100%; 
 }
