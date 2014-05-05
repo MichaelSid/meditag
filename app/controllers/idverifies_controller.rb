@@ -6,6 +6,23 @@ class IdverifiesController < ApplicationController
     # uuid_assigned_to_user?
   end
 
+   def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+
+    if @user.update(params[:user].permit(:uuid))
+      flash[:notice] = 'user updated successfully'
+      redirect_to "/user/edit"
+    else
+      render 'update'
+    end
+  end
+
+  private
+
   def verify
     @uuid = params["tag-uuid"].to_s
     verification_functions

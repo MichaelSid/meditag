@@ -33,21 +33,19 @@ describe 'QRCode registration page' do
         expect(full_current_path).to eq @qrpath
       end
     end
-  
-    context 'check uuid against database' do
-      it 'should show flash message if uuid not already assigned' do
-        expect(page).to have_content 'UUID verified successfully'
-      end
+  end
+  context 'check uuid against database' do
+    it 'should show flash message if uuid not already assigned' do
+      expect(page).to have_content 'UUID verified successfully'
     end
- 
-      it 'display flash message if uuid IS assigned to user' do
-        visit '/idverify/new'
-        user = User.find(@rick)
-        user.uuid = @uuid.to_s
-        user.save
-        visit @qrpath
-        expect(page).to have_content 'Something went wrong. Please try again'
-      end
+
+    it 'display flash message if uuid IS assigned to another user' do
+      visit '/idverify/new'
+      fill_in 'uuid-form', with: @uuid
+      click_button 'Submit'
+
+      expect(page).to have_content 'Something went wrong. Please try again'
+    end
   end
 
   describe 'Verify validity of uuid' do
@@ -64,7 +62,5 @@ describe 'QRCode registration page' do
         expect(page).to have_content 'UUID verified successfully'
       end
     end
-
   end
-
 end
