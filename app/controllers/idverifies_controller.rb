@@ -20,7 +20,7 @@ include IdverifiesHelper
   end
 
   def save_uuid_to_current_user
-    if user_signed_in?# && current_user.uuid.blank?
+    if user_signed_in? && current_user.uuid.blank?
       current_user.uuid = @uuid
       current_user.save
       redirect_to edit_profile_path

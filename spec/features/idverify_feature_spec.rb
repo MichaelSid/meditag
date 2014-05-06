@@ -30,7 +30,7 @@ describe 'QRCode registration page' do
     context 'user visits from qrcode' do
       it 'redirects logged out user to registration' do
         logout :user
-        visit @qrpath
+        visit '/idverify/verify?tag-uuid=' + SecureRandom.uuid
         expect(full_current_path).to eq new_user_registration_path
       end
 
