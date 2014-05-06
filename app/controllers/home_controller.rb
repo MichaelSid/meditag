@@ -4,6 +4,6 @@ class HomeController < ApplicationController
   		redirect_to '/profile/edit'
   	else
 	  	render layout: false
-	end
+    end
   end
 end
