@@ -29,6 +29,7 @@ gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 gem 'rails_12factor', group: :production
 gem 'skrollr-rails'
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'sass-mediaqueries-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
