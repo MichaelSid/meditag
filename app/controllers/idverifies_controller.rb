@@ -1,5 +1,7 @@
 class IdverifiesController < ApplicationController
 
+include IdverifiesHelper
+
   def new
     
   end
@@ -12,23 +14,19 @@ class IdverifiesController < ApplicationController
   def verification_functions
     if valid_uuid?
       flash[:notice] = 'UUID verified successfully'
+      session[:uuid] = @uuid
+      uuid_verified_redirect
     else
       flash[:notice] = 'Something went wrong. Please try again'
     end
   end
 
-  def valid_uuid?
-    return false unless correct_uuid_length?
-    return false if uuid_assigned_to_user?
-    return true
-  end
-
-  def correct_uuid_length?
-    @uuid.length == 36
-  end
-
-  def uuid_assigned_to_user?
-    User.exists?(uuid: @uuid)
+  def uuid_verified_redirect
+    if user_signed_in?
+      authenticate_user!
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
 end
