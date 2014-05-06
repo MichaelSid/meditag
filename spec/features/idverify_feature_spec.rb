@@ -63,11 +63,10 @@ describe 'QRCode registration page' do
     end
 
     context 'uuid is valid' do
-
       it 'displays a verification successful message' do
         @uuid2 = SecureRandom.uuid
         visit '/idverify/new'
-        fill_in 'uuid-form', with: @uuid
+        fill_in 'uuid-form', with: @uuid2
         click_button 'Submit'
         expect(page).to have_content 'UUID verified successfully'
       end

@@ -10,4 +10,17 @@ describe "sign up" do
     expect(current_path).to eq '/profile/new'
   end
 
+describe 'assign uuid to user' do
+
+  before do
+      @rick = create(:user)
+      login_as @rick
+      create(:profile, user: rick)
+    end
+
+  xit 'assigns valid uuid to a user' do
+    tag_uuid = SecureRandom.uuid
+  end
+end
+
 end
