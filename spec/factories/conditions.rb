@@ -10,5 +10,6 @@ FactoryGirl.define do
   factory :asthma, class: :condition do 
     condition 'Asthma'
     notes "Can't breath"
+    emergency true
   end
 end

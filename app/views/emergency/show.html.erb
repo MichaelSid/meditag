@@ -13,13 +13,17 @@
 <% end %>
 
 <% @user.medications.each do |med| %>
-  <p><%= med.medication %>
-  <%= med.dose %></p>
+  <% if med.emergency == true %>
+    <p><%= med.medication %>
+    <%= med.dose %></p>
+  <% end %>
 <% end %>
 
 <% @user.conditions.each do |con| %>
-  <p><%= con.condition %>
-  <%= con.notes %></p>
+  <% if con.emergency == true %>
+    <p><%= con.condition %>
+    <%= con.notes %></p>
+  <% end %>
 <% end %>
 
 <% if @user.gpdetail %>
@@ -35,4 +39,4 @@
   <p><%= @user.gpdetail.postcode %></p>
 <% end %>
 
-<div class="qrcode"><%= image_tag "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{profile_url(@profile)}", class: 'qrcode' %></div>
+<div class="qrcode"><%= image_tag "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{emergency_url(@user)}", class: 'qrcode' %></div>
