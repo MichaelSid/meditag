@@ -5,4 +5,10 @@ FactoryGirl.define do
     medication "MyString"
     dose "MyText"
   end
+
+  factory :pulmecort, class: :medication do
+    medication "Pulmecort"
+    dose "2mg"
+    emergency true
+  end
 end

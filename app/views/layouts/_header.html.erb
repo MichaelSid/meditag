@@ -17,7 +17,11 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
-      <li><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+
+      <% if current_user %>
+        <li class="<%= is_active?(emergency_path(current_user))%>"><%= link_to ' Emercengy Info', emergency_path(current_user), class: 'fa fa-dashboard' %></li>
+      <% end %>
+
       <li class="<%= is_active?(edit_profile_path)%>"><%= link_to ' Profile', edit_profile_path, class: 'fa fa-user' %></li>
       <li class="<%= is_active?(new_condition_path)%>"><%= link_to ' Conditions', new_condition_path, class: 'fa fa-stethoscope' %></li>
       <li class="<%= is_active?(new_medication_path)%>"><%= link_to ' Medications', new_medication_path, class: 'fa fa-medkit' %></li>

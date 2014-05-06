@@ -4,39 +4,48 @@ describe 'emergency page' do
 
   context 'general info' do
     before do
-      create(:user, uuid: 'hdd', profile: create(:profile), medications: [create(:medication)], conditions: [create(:asthma), create(:condition)])
+      @rick = create(:user, profile: create(:profile), medications: [create(:medication), create(:pulmecort)], conditions: [create(:asthma), create(:condition)])
     end
 
     it "shows firstname" do
-      visit '/emergency/hdd'
+      login_as @rick
+      visit "/emergency/#{@rick.id}"
       expect(page).to have_content 'John'
     end
 
     it 'shows lastname' do 
-      visit '/emergency/hdd'
+      login_as @rick
+      visit emergency_path(@rick)
       expect(page).to have_content 'Smith'
     end
 
     context 'medications' do
-      it 'shows all medications' do 
-        visit '/emergency/hdd'
+      it 'do not shows medication' do 
+        visit emergency_path(@rick)
 
-        expect(page).to have_content 'MyString'
-        expect(page).to have_content 'MyText'
+        expect(page).not_to have_content 'MyString'
+        expect(page).not_to have_content 'MyText'
+      end
+
+      it 'shows the second medication' do 
+        visit emergency_path(@rick)
+
+        expect(page).to have_content 'Pulmecort'
+        expect(page).to have_content '2mg'
       end
     end
 
     context 'conditions' do
 
-      it 'shows the first condition' do 
-        visit '/emergency/hdd'
+      it 'do not show the first condition' do 
+       visit emergency_path(@rick)
 
-        expect(page).to have_content 'Cancer'
-        expect(page).to have_content 'not so good'
+        expect(page).not_to have_content 'Cancer'
+        expect(page).not_to have_content 'not so good'
       end
 
       it 'shows the second conditions' do 
-        visit '/emergency/hdd'
+        visit emergency_path(@rick)
 
         expect(page).to have_content 'Asthma'
         expect(page).to have_content "Can't breath"

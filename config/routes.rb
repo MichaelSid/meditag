@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :medications
   resource :gpdetail
   resources :emergency
+  
   resource :idverify do
     collection do 
       get :verify
