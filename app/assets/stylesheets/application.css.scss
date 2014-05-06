@@ -19,6 +19,14 @@
 
 body {
   margin-top: 25px;
+  padding-top: 75px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn.btn-success {
+  background-color: #123c64;
+  outline: none;
+  border: none;
 }
 
 #nav.navbar-nav.side-nav li {
@@ -228,6 +236,7 @@ table.tablesorter thead tr th:hover {
   background: url(http://i.imgur.com/WWNrDqf.jpg);
   overflow-y: auto;
   padding-top: 100px;
+  font-family: 'Open Sans', sans-serif;
   }
 
   /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
@@ -242,6 +251,7 @@ table.tablesorter thead tr th:hover {
   background-color: transparent;
   box-shadow: none;
   -webkit-box-shadow: none;
+  font-family: 'Open Sans', sans-serif;
   }
 
   .side-nav>li.dropdown>ul.dropdown-menu>li>a {
@@ -277,10 +287,12 @@ table.tablesorter thead tr th:hover {
 
   .messages-dropdown .dropdown-menu {
   min-width: 300px;
+  font-family: 'Open Sans', sans-serif;
   }
 
   .messages-dropdown .dropdown-menu li a {
   white-space: normal;
+  font-family: 'Open Sans', sans-serif;
   }
 
   .navbar-collapse {
@@ -288,6 +300,43 @@ table.tablesorter thead tr th:hover {
     padding-left: 15px !important;
     padding-right: 15px !important;
     background: url(http://i.imgur.com/WWNrDqf.jpg);
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  /* footer */
+
+  footer {
+    margin-top: 40%;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 250px;
+    border-top: 1px solid #eaeaea;
+    color: #999;
+    bottom: 0px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  footer a {
+    color: #555;
+  }
+  
+  footer a:hover {
+    color: #222;
+  }
+  
+  footer small {
+    float: left;
+  }
+  
+  footer ul {
+    float: right;
+    list-style: none;
+  }
+  
+  footer ul li {
+    float: left;
+    margin-left: 10px;
   }
 
 }
