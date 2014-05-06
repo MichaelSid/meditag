@@ -1,54 +1,67 @@
-<%= form_for @profile, url: profile_path do |f| %>
+<%= form_for @profile, html: {multipart: true}, url: profile_path do |f| %>
 
-<div class="profile-pic">
-  <%= f.file_field :picture, required: false, class: 'form-control' %>
-  <input type="submit">
-</div>
+  <div class="col-md-6">
 
-<div class="form-group">
-  <%= f.text_field :firstname, required: true, placeholder: 'Firstname', class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :firstname, required: true, placeholder: 'Firstname', class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :lastname, required: true, placeholder: 'Lastname', class: 'form-control' %>
-</div>
 
-  <div class="form-group">
-  <%= f.date_field :dob, required: true, placeholder: 'Date of Birth', class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :lastname, required: true, placeholder: 'Lastname', class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :contactnr, required: true, placeholder: 'Contact Number', class: 'form-control' %>
-</div>
+      <div class="form-group">
+      <%= f.date_field :dob, required: true, placeholder: 'Date of Birth', class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :address1, required: true, placeholder: 'Address Line 1', class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :contactnr, required: true, placeholder: 'Contact Number', class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :address2, required: true, placeholder: 'Address Line 2', class: 'form-control' %>
-</div>
 
-<div class="form-group">
-  <%= f.text_field :town, required: true, placeholder: 'Town', class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :address1, required: true, placeholder: 'Address Line 1', class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :county, required: true, placeholder: 'County', class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :address2, required: true, placeholder: 'Address Line 2', class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :country, required: true, placeholder: 'Country', class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :town, required: true, placeholder: 'Town', class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :postcode, required: true, placeholder: 'Postcode', class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :county, required: true, placeholder: 'County', class: 'form-control' %>
+    </div>
 
-<div class="form-group">
-  <%= f.text_field :gender, required: true, placeholder: 'Gender', class: 'form-control' %>
-</div>
+    <div class="form-group">
+      <%= f.text_field :country, required: true, placeholder: 'Country', class: 'form-control' %>
+    </div>
 
-<%= f.submit class: 'btn btn-success' %> </p>
+    <div class="form-group">
+      <%= f.text_field :postcode, required: true, placeholder: 'Postcode', class: 'form-control' %>
+    </div>
 
+    <div class="form-group">
+      <%= f.text_field :gender, required: true, placeholder: 'Gender', class: 'form-control' %>
+    </div>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <div class='uploaded-pic'>
+      <%= image_tag @profile.image.url(:medium) %>
+    </div>
+
+    <div class="form-group">
+      <%= f.file_field :image %>
+    </div>
+
+    <%= f.submit class: 'btn btn-success' %> </p>
+
+  </div>
+  
 <%end%>
