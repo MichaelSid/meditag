@@ -2,55 +2,86 @@
 <html>
 <head>
   <link rel="shortcut icon" type="image/png" href="public/favicon.ico"/>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <meta charset="utf-8" />
-  <title>Home</title>
+  <title>Medicode Home</title>
 </head>
-<body>
-    <div id="summary">     
-      <article>About the Tag</article>
-      <h2>"Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed; you can simply update your information online."</h2>
+<body class='homepage'>
+    <div class="text">
+      <section id="summary">     
+        <h2>About the Tag</h2>
+        <span>Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed; you can simply update your information online.</span>
+      </section>
     </div>   
-
-    <div id="patient">
-      <article>Signing up as a Patient</article>
-      <h2>"Signing up with a Patient profile gives you 24/7 instant access to your own medical information, as customised by you.  The site gives you the ability to add or remove illnesses, allergies, and any current medication in order to ensure the best possible care in case of emergency"</h2>
-      <br>
-      <%= button_to "Sign Up As Patient", :controller => "registration", :action => "new", :method => :get %>
-      <br>
+    <div class="image">
     </div>
-
-    <div id="gp">
-      <article>Signing up as a GP</article>
-      <h2>"Signing up as a General Practitioner allows doctors to track patients' illnesses and medication in a secure way, in particular facilitating tracking of medical records when a patient changes GP."</h2>
-      <br>
-        <button id="sign-up-gp">
-          Sign up as GP
-        </button>
-      <br>
+    <div class="text">
+      <section id="patient">
+        <h2>Signing up as a Tag User</h2>
+        <span>Signing up with a Tag User profile gives you 24/7 instant access to your own medical information, as customised by you.  The site gives you the ability to add or remove illnesses, allergies, and any current medication in order to ensure the best possible care in case of emergency</span>
+        <br>
+        <%= button_to "Sign Up As Tag User", {:controller => "registration", :action => "new"}, {:method => :get} %>
+        <br>
+      </section>
+    </div>   
+    <div class="image">
     </div>
-
-    <div id="emergency">
-      <article>Signing up as an Emergency Healthcare Professional</article>
-      <h2>"Signing up as Emergency healthcare professional gives you the ability to see a patient's most important medical information instantly in case of emergency.  This reduces risk of ADRs when administering emergency medications, and provides vital information about a patient's medical condition."</h2>
-      <br>
-        <button id="sign-up-emergency">
-          Sign up as Emergency Healthcare Professional
-        </button>
-      <br>
+    <div class="text">
+      <section id="gp">
+        <h2>Signing up as a GP</h2>
+        <span>Signing up as a General Practitioner allows doctors to track patients' illnesses and medication in a secure way, in particular facilitating tracking of medical records when a patient changes GP.</span>
+        <br>
+          <button id="sign-up-gp">
+           Sign up as GP
+          </button>
+        <br>
+      </section>
+    </div>   
+    <div class="image">
     </div>
-  <script>
-    	$(window).bind('scroll',function(e){
-   			parallaxScroll();
-   		});
- 
-   		function parallaxScroll(){
-   		var scrolledY = $(window).scrollTop();
-				$('.summary').css('background-position','center -'+((scrolledY*0.2))+'px');
-				$('.patient').css('top','-'+((scrolledY*0.4))+'px');
-				$('.gp').css('top','-'+((scrolledY*0.6))+'px');
-				$('.emergency').css('top','-'+((scrolledY*0.8))+'px');
-   		};
-	</script>
+    <div class="text">
+      <section id="emergency">
+        <h2>Signing up as an Emergency Healthcare Professional</h2>
+        <span>Signing up as Emergency healthcare professional gives you the ability to see a patient's most important medical information instantly in case of emergency.  This reduces risk of ADRs when administering emergency medications, and provides vital information about a patient's medical condition.</span>
+        <br>
+          <button id="sign-up-emergency">
+            Sign up as Emergency Healthcare Professional
+          </button>
+        <br>
+      </section>
+    </div>
+    <script>
+      // The plugin code
+      (function($){
+        $.fn.parallax = function(options){
+          var $$ = $(this);
+          offset = $$.offset();
+          console.log(offset)
+          var defaults = {
+            "start": 0,
+            "stop": offset.top + $$.height(),
+            "coeff": 0.95
+          };
+          var opts = $.extend(defaults, options);
+          return this.each(function(){
+            $(window).bind('scroll', function() {
+              windowTop = $(window).scrollTop();
+              if((windowTop >= opts.start) && (windowTop <= opts.stop)) {
+                newCoord = windowTop * opts.coeff;
+                $$.css({
+                    "background-position": "0 "+ newCoord + "px"
+                });
+              }
+            });
+          });
+        };
+      })(jQuery);
+      
+      // call the plugin
+      $('section').parallax({ "coeff":-0.65 });
+      $('section div').parallax({ "coeff":1.15 });
+    </script>
 </body>
 </html>

@@ -3,38 +3,48 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#summary {
-	position:fixed;
-	background:url(http://i.imgur.com/WwVeYa1.png) top center no-repeat; 
-	height:100%; 
-	width:100%; 
-	top:0; 
-	left:0;
+.homepage {
+	margin-top: 0;
 }
-#patient {
+
+body {
+	height: 2000px;
+}
+
+.text {
 	position:fixed;
-	background:url(http://i.imgur.com/jFXwNqa.jpg);
-	width:250px; 
-	height:187px; 
 	left:50%; 
-	margin-left:-600px;
-	margin-top:400px;
+	color: white;
+	width: 100%;
+	opacity: 75%;
+	margin-top: -20px;
 }
+
+.image {
+	background-color: red;
+	color: white;
+	width: 100%;
+	height: 200px;
+	opacity: 100%;
+	margin: 0;
+}
+
+#summary {
+	background:url(http://i.imgur.com/WwVeYa1.png) center no-repeat; 
+	height: 150px; 
+}
+
+#patient {
+	background: url(http://i.imgur.com/jFXwNqa.jpg);
+	height: 150px; 
+}
+
 #gp {
-	position:fixed;
-	background:url(http://i.imgur.com/2Gg1ArO.jpg);
-	width:300px;
-	height:246px;
-	left:50%;
-	margin-left:400px;
-	margin-top:500px;
+	background: url(http://i.imgur.com/2Gg1ArO.jpg);
+	height: 150px;
 }
+
 #emergency {
-	position:fixed;
-	background:url(http://i.imgur.com/RURrXvT.jpg);
-	width:300px;
-	height:246px;
-	left:50%;
-	margin-left:400px;
-	margin-top:500px;
+	background: url(http://i.imgur.com/RURrXvT.jpg);
+	height: 150px;
 }
