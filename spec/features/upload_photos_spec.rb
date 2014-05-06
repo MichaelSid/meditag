@@ -5,7 +5,6 @@ describe 'Uploading photos' do
 let(:rick) { create(:user) }
 
 	it 'displays the image on the post page' do
-		
 		login_as rick
 		create(:profile, user: rick)
 		visit '/profile/edit'
