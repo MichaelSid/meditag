@@ -1,15 +1,15 @@
 <% if @user.profile %>
-<p><%= @user.profile.firstname %></p>
-<p><%= @user.profile.lastname %></p>
-<p><%= @user.profile.dob %></p>
-<p><%= @user.profile.contactnr %></p>
-<p><%= @user.profile.address1 %></p>
-<p><%= @user.profile.address2 %></p>
-<p><%= @user.profile.town %></p>
-<p><%= @user.profile.county %></p>
-<p><%= @user.profile.country %></p>
-<p><%= @user.profile.postcode %></p>
-<p><%= @user.profile.gender %></p>
+  <p><%= @user.profile.firstname %></p>
+  <p><%= @user.profile.lastname %></p>
+  <p><%= @user.profile.dob %></p>
+  <p><%= @user.profile.contactnr %></p>
+  <p><%= @user.profile.address1 %></p>
+  <p><%= @user.profile.address2 %></p>
+  <p><%= @user.profile.town %></p>
+  <p><%= @user.profile.county %></p>
+  <p><%= @user.profile.country %></p>
+  <p><%= @user.profile.postcode %></p>
+  <p><%= @user.profile.gender %></p>
 <% end %>
 
 <% @user.medications.each do |med| %>
@@ -21,3 +21,18 @@
   <p><%= con.condition %>
   <%= con.notes %></p>
 <% end %>
+
+<% if @user.gpdetail %>
+  <p><%= @user.gpdetail.firstname %></p>
+  <p><%= @user.gpdetail.lastname %></p>
+  <p><%= @user.gpdetail.faxnumber %></p>
+  <p><%= @user.gpdetail.contactnr %></p>
+  <p><%= @user.gpdetail.address1 %></p>
+  <p><%= @user.gpdetail.address2 %></p>
+  <p><%= @user.gpdetail.town %></p>
+  <p><%= @user.gpdetail.county %></p>
+  <p><%= @user.gpdetail.country %></p>
+  <p><%= @user.gpdetail.postcode %></p>
+<% end %>
+
+<div class="qrcode"><%= image_tag "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{profile_url(@profile)}", class: 'qrcode' %></div>
