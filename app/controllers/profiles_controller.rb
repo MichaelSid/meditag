@@ -51,7 +51,8 @@ class ProfilesController < ApplicationController
       :county,
       :country,
       :postcode,
-      :gender)
+      :gender,
+      :image)
   end
 
 end
