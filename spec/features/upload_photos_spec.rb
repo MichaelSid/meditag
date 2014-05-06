@@ -11,6 +11,6 @@ let(:rick) { create(:user) }
 		visit '/profile/edit'
 		attach_file 'profile_image', Rails.root.join('spec/images/cute-cat-wallpapers.jpg')
 		click_button 'Update Profile'
-		expect(page).to have_css 'img.uploaded-pic'
+		expect(page).to have_css '.uploaded-pic'
 	end
 end
