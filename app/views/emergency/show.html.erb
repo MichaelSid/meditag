@@ -1,6 +1,6 @@
 <% if @user.profile %>
   <div class='row'>
-    <div class="col-xs-12 blue">
+    <div class="col-xs-12 col-md-6 blue">
       <%= @user.profile.firstname %>
       <%= @user.profile.lastname %>
       <%= @user.profile.dob %>
@@ -58,8 +58,10 @@
 <% end %>
 
 <div class="row">
-  <div class="col-xs-12 col-md-6 blue qr">
+  <div class="col-xs-12 col-md-6">
+    <div class="blue qr">
     <%= image_tag "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{emergency_url(@user)}", class: 'qrcode' %>
+    </div>
   </div>
 </div>
 
