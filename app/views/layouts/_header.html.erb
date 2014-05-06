@@ -19,7 +19,7 @@
     <ul class="nav navbar-nav side-nav">
 
       <% if current_user %>
-        <li class="<%= is_active?(emergency_path(current_user))%>"><%= link_to ' Emercengy Info', emergency_path(current_user), class: 'fa fa-dashboard' %></li>
+        <li class="<%= is_active?(emergency_path(current_user))%>"><%= link_to ' Emergency Info', emergency_path(current_user), class: 'fa fa-dashboard' %></li>
       <% end %>
 
       <li class="<%= is_active?(edit_profile_path)%>"><%= link_to ' Profile', edit_profile_path, class: 'fa fa-user' %></li>

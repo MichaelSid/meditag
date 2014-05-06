@@ -10,8 +10,11 @@
   <title>Medicode Home</title>
 </head>
 <body class='homepage'>
-  <%= image_tag "medicode-logo.png", class: "logo" %>
-  <div id="logo-text">MEDICAL DATA DEVICE</div>
+  <%= image_tag "medicode-logo.png", class: "home-logo" %>
+  <div id="home-logo-text">MEDICAL DATA DEVICE</div>
+
+  <%= button_to "Sign In", {:controller => "sessions", :action => "new"}, { :method => :get, :class => "sign-in-button" } %>
+
     <div class="text">
       <section id="summary">     
         <h2>About the Tag</h2>
