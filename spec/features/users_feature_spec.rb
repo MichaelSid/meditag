@@ -13,14 +13,17 @@ describe "sign up" do
 describe 'assign uuid to user' do
 
   before do
+      @tag_uuid = SecureRandom.uuid
       @rick = create(:user)
       login_as @rick
-      create(:profile, user: rick)
+      create(:profile, user: @rick)
+      visit '/idverify/verify?tag-uuid=' + @tag_uuid
     end
 
-  xit 'assigns valid uuid to a user' do
-    tag_uuid = SecureRandom.uuid
+  it 'assigns valid uuid to a logged in user' do
+    expect(@rick.reload.uuid).to eq @tag_uuid
   end
+  
 end
 
 end

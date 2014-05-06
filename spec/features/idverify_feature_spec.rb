@@ -44,7 +44,6 @@ describe 'QRCode registration page' do
         visit '/idverify/new'
         user = User.find(@rick)
         user.uuid = @uuid.to_s
-        user.save
         visit @qrpath
         expect(page).to have_content 'Something went wrong. Please try again'
       end
@@ -55,10 +54,9 @@ describe 'QRCode registration page' do
   describe 'Verify validity of uuid' do
 
     before do
+      @uuid = SecureRandom.uuid
       @rick = create(:user)
       login_as @rick
-      @uuid = SecureRandom.uuid
-      visit '/idverify/verify?tag-uuid=' + @uuid
     end
 
     context 'uuid is invalid' do
@@ -68,13 +66,23 @@ describe 'QRCode registration page' do
       end
     end
 
-    context 'uuid is valid' do
+    context 'if uuid is valid and user logged out' do
       it 'displays a verification successful message' do
-        @uuid2 = SecureRandom.uuid
+        logout :user
         visit '/idverify/new'
-        fill_in 'uuid-form', with: @uuid2
+        fill_in 'uuid-form', with: @uuid
         click_button 'Submit'
-        expect(page).to have_content 'UUID verified successfully'
+        expect(full_current_path).to eq new_user_registration_path
+      end
+    end
+
+    context 'if uuid is valid and user logged in' do
+      it 'displays a verification successful message and redirect to sign up' do
+        logout :user
+        visit '/idverify/new'
+        fill_in 'uuid-form', with: @uuid
+        click_button 'Submit'
+        expect(full_current_path).to eq new_user_registration_path
       end
     end
 
