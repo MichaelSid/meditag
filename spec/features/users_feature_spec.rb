@@ -29,7 +29,7 @@ describe 'assign uuid to user' do
         visit '/idverify/verify?tag-uuid=' + SecureRandom.uuid
         visit '/idverify/verify?tag-uuid=' + SecureRandom.uuid
         visit new_idverify_path
-        expect(page).to have_content "Account already has a tag associated. Click the 'Register Tag' link to set new"
+        expect(page).to have_content "Account already has a tag associated."
       end
 
       it 'displays a message if account does not have uuid associated' do

@@ -53,7 +53,6 @@ before do
 			expect(find('.emergency-field')).to be_true
 		end
 	end
-
 end
 
 
