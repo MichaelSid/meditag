@@ -6,7 +6,7 @@ describe "emergency contact page" do
       login_as create(:user)
       visit '/emergencycontact/new'
 
-      expect(page).to have_content 'Add details below'
+      expect(page).to have_content 'New Information'
     end
   end
 
