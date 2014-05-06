@@ -21,12 +21,262 @@ body {
   margin-top: 25px;
 }
 
+.logo {  
+  position: fixed;
+  float: left;
+  z-index: 100;
+  height: 57px;
+  width: 243px;
+  float: left;
+  margin-top: 0;
+  margin-left: 8px;
+  opacity: 1;
+}
+
+#logo-text {
+  position: fixed;
+  float: left;
+  display: inline-block;
+  font-family: 'Syncopate', sans-serif;
+  z-index: 80;
+  color: white;
+  opacity: 1;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 45px;
+}
+
 .container {
   width: 100% !important;
-  padding: 60px;
 }
 
 .qrcode {
   height: 150px;
   width: 150px;
+}
+
+/* 
+Author: Start Bootstrap - http://startbootstrap.com
+'SB Admin' HTML Template by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0. 
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+
+/* ATTN: This is mobile first CSS - to update 786px and up screen width use the media query near the bottom of the document! */
+
+/* Global Styles */
+
+body {
+  margin-top: 75px;
+  padding-top: 25px;
+}
+
+nav div {
+  color: white;
+  height: 75px;
+}
+
+
+.links {
+  float: right;
+  text-align: right;
+  margin-left: 50px;
+  height: 15px;
+}
+
+/*.contact-link {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.faq-link {
+  margin-left: 100px;
+}*/
+
+#text {
+  float: left;
+  font-family: 'Syncopate', sans-serif;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#wrapper {
+  padding-left: 0;
+}
+
+#page-wrapper {
+  width: 100%;
+  /*padding: 15px 15px;*/
+}
+
+/* Nav Messages */
+
+.messages-dropdown .dropdown-menu .message-preview .avatar,
+.messages-dropdown .dropdown-menu .message-preview .name,
+.messages-dropdown .dropdown-menu .message-preview .message,
+.messages-dropdown .dropdown-menu .message-preview .time {
+  display: block;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .avatar {
+  float: left;
+  margin-right: 15px;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .name {
+  font-weight: bold;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .message {
+  font-size: 12px;
+}
+
+.messages-dropdown .dropdown-menu .message-preview .time {
+  font-size: 12px;
+}
+
+
+/* Nav Announcements */
+
+.announcement-heading {
+  font-size: 50px;
+  margin: 0;
+}
+
+.announcement-text {
+  margin: 0;
+}
+
+/* Table Headers */
+
+table.tablesorter thead {
+  cursor: pointer;
+}
+
+table.tablesorter thead tr th:hover {
+  background-color: #f5f5f5;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+  display: block;
+  height: 400px;
+}
+
+.flot-chart-content {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-header{
+  background-color: #2C4762 !important;
+}
+
+.navbar-collapse {
+ background-color: #2C4762 !important; 
+}
+
+.side-nav>li.active>a {
+  background-color: #3c6185 !important;
+}
+
+.blue {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 10px;
+  width: calc(100% - 2em);
+}
+
+.qr{
+  text-align: center;
+  padding: auto
+}
+
+
+
+/* Edit Below to Customize Widths > 768px */
+@media (min-width:768px) {
+
+  /* Wrappers */
+
+  #wrapper {
+  padding-left: 250px;
+  }
+
+
+  /* Side Nav */
+
+  .side-nav {
+  /*margin-left: -225px;*/
+  left: 0px;
+  width: 250px;
+  position: fixed;
+  top: 70px;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  background-color: #2C4762;
+  overflow-y: auto;
+  padding-top: 15px;
+  }
+
+  /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
+
+  .side-nav>li.dropdown>ul.dropdown-menu {
+  position: relative;
+  min-width: 225px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  }
+
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a {
+  color: #999999;
+  padding: 15px 15px 15px 25px;
+  }
+
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a:hover,
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a.active,
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a:focus {
+  /*color: #fff;*/
+  /*background-color: #080808;*/
+  }
+
+  .side-nav>li>a {
+  width: 250px;
+  }
+
+  .side-nav>li.active>a {
+    background-color: #3c6185 !important;
+  }
+
+  .navbar-inverse .navbar-nav>li>a:hover,
+  .navbar-inverse .navbar-nav>li>a:focus {
+  background-color: #446d97;
+  }
+
+  /* Nav Messages */
+
+  .messages-dropdown .dropdown-menu {
+  min-width: 300px;
+  }
+
+  .messages-dropdown .dropdown-menu li a {
+  white-space: normal;
+  }
+
+  .navbar-collapse {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    background-color: #2C4762;
+  }
+
 }

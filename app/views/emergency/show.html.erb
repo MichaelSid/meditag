@@ -1,42 +1,68 @@
 <% if @user.profile %>
-  <p><%= @user.profile.firstname %></p>
-  <p><%= @user.profile.lastname %></p>
-  <p><%= @user.profile.dob %></p>
-  <p><%= @user.profile.contactnr %></p>
-  <p><%= @user.profile.address1 %></p>
-  <p><%= @user.profile.address2 %></p>
-  <p><%= @user.profile.town %></p>
-  <p><%= @user.profile.county %></p>
-  <p><%= @user.profile.country %></p>
-  <p><%= @user.profile.postcode %></p>
-  <p><%= @user.profile.gender %></p>
+  <div class='row'>
+    <div class="col-xs-12 col-md-6 blue">
+      <%= @user.profile.firstname %>
+      <%= @user.profile.lastname %>
+      <%= @user.profile.dob %>
+      <%= @user.profile.contactnr %>
+      <%= @user.profile.address1 %>
+      <%= @user.profile.address2 %>
+      <%= @user.profile.town %>
+      <%= @user.profile.county %>
+      <%= @user.profile.country %>
+      <%= @user.profile.postcode %>
+      <%= @user.profile.gender %>
+    </div>
+  </div>
 <% end %>
 
 <% @user.medications.each do |med| %>
   <% if med.emergency == true %>
-    <p><%= med.medication %>
-    <%= med.dose %></p>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 blue">
+        <h4>Medication</h4>
+        <p><%= med.medication %>
+        <%= med.dose %></p>
+      </div>
+    </div>
   <% end %>
 <% end %>
 
 <% @user.conditions.each do |con| %>
   <% if con.emergency == true %>
-    <p><%= con.condition %>
-    <%= con.notes %></p>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 blue">
+        <h4>Condition</h4>
+        <p><%= con.condition %>
+        <%= con.notes %></p>
+      </div>
+    </div>
   <% end %>
 <% end %>
 
 <% if @user.gpdetail %>
-  <p><%= @user.gpdetail.firstname %></p>
-  <p><%= @user.gpdetail.lastname %></p>
-  <p><%= @user.gpdetail.faxnumber %></p>
-  <p><%= @user.gpdetail.contactnr %></p>
-  <p><%= @user.gpdetail.address1 %></p>
-  <p><%= @user.gpdetail.address2 %></p>
-  <p><%= @user.gpdetail.town %></p>
-  <p><%= @user.gpdetail.county %></p>
-  <p><%= @user.gpdetail.country %></p>
-  <p><%= @user.gpdetail.postcode %></p>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 blue">
+      <p><%= @user.gpdetail.firstname %></p>
+      <p><%= @user.gpdetail.lastname %></p>
+      <p><%= @user.gpdetail.faxnumber %></p>
+      <p><%= @user.gpdetail.contactnr %></p>
+      <p><%= @user.gpdetail.address1 %></p>
+      <p><%= @user.gpdetail.address2 %></p>
+      <p><%= @user.gpdetail.town %></p>
+      <p><%= @user.gpdetail.county %></p>
+      <p><%= @user.gpdetail.country %></p>
+      <p><%= @user.gpdetail.postcode %></p>
+    </div>
+  </div>
 <% end %>
 
-<div class="qrcode"><%= image_tag "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{emergency_url(@user)}", class: 'qrcode' %></div>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="blue qr">
+    <%= image_tag "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=#{emergency_url(@user)}", class: 'qrcode' %>
+    </div>
+  </div>
+</div>
+
+
