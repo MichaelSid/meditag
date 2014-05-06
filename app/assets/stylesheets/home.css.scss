@@ -8,6 +8,34 @@
 	text-align: center;
 }
 
+#patient:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -250px; 
+  height: 250px; 
+  visibility: hidden; 
+}
+
+#gp:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -250px; 
+  height: 250px; 
+  visibility: hidden; 
+}
+
+#emergency:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -250px; 
+  height: 250px; 
+  visibility: hidden; 
+}
+
+a {
+	width: 30%;
+}
+
 .text {
 	color: white;
 	position: relative;
@@ -15,11 +43,15 @@
 	background-color:rgba(255,255,255,0.25);
 	padding-left: 150px;
 	padding-right: 150px;
+	padding-top: 7%;
+	padding-bottom: 7%;
 	display: inline-block;
 	z-index: 200;
-	margin-top: 200px;
-	margin-bottom: 300px;
+	margin-top: 15%;
+	margin-bottom: 15%;
 	text-align: center;
+	vertical-align: center;
+	horizontal-align: center;
 }
 
 .image {
