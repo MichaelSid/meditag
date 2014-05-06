@@ -21,6 +21,10 @@ body {
   margin-top: 25px;
 }
 
+#nav.navbar-nav.side-nav li {
+  color: white;
+}
+
 .logo {  
   position: fixed;
   float: left;
@@ -171,15 +175,17 @@ table.tablesorter thead tr th:hover {
 }
 
 .navbar-header{
-  background-color: #2C4762 !important;
+  background-color: #123c64;
 }
 
 .navbar-collapse {
- background-color: #2C4762 !important; 
+ background-color: #123c64; 
 }
 
 .side-nav>li.active>a {
-  background-color: #3c6185 !important;
+  background-color: #446d97 !important;
+  color: white;
+  opacity: 0.5;
 }
 
 .blue {
@@ -215,13 +221,13 @@ table.tablesorter thead tr th:hover {
   left: 0px;
   width: 250px;
   position: fixed;
-  top: 70px;
+  top: 0px;
   height: 100%;
   border-radius: 0;
   border: none;
-  background-color: #2C4762;
+  background: url(http://i.imgur.com/WWNrDqf.jpg);
   overflow-y: auto;
-  padding-top: 15px;
+  padding-top: 100px;
   }
 
   /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
@@ -251,16 +257,20 @@ table.tablesorter thead tr th:hover {
   }
 
   .side-nav>li>a {
-  width: 250px;
+    width: 250px;
+    color: white;
   }
 
   .side-nav>li.active>a {
-    background-color: #3c6185 !important;
+    background-color: #446d97 !important;
+    opacity: 0.5;
   }
 
   .navbar-inverse .navbar-nav>li>a:hover,
   .navbar-inverse .navbar-nav>li>a:focus {
-  background-color: #446d97;
+  background-color: #3d98dd;
+  color: white;
+  opacity: 0.5;
   }
 
   /* Nav Messages */
@@ -274,9 +284,10 @@ table.tablesorter thead tr th:hover {
   }
 
   .navbar-collapse {
+    left: 25px;
     padding-left: 15px !important;
     padding-right: 15px !important;
-    background-color: #2C4762;
+    background: url(http://i.imgur.com/WWNrDqf.jpg);
   }
 
 }
