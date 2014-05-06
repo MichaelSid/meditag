@@ -24,6 +24,7 @@ include IdverifiesHelper
   def uuid_verified_redirect
     if user_signed_in?
       authenticate_user!
+      redirect_to edit_profile_path
     else
       redirect_to new_user_registration_path
     end

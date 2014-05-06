@@ -27,9 +27,15 @@ describe 'QRCode registration page' do
       visit @qrpath
     end
   
-    context 'new user visits from qrcode' do
-      it 'should pass uuid to url parameters' do
-        expect(full_current_path).to eq @qrpath
+    context 'user visits from qrcode' do
+      it 'redirects logged out user to registration' do
+        logout :user
+        visit @qrpath
+        expect(full_current_path).to eq new_user_registration_path
+      end
+
+      it 'redirects a logged in user to profile page' do
+        expect(full_current_path).to eq edit_profile_path
       end
     end
   
