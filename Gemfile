@@ -30,6 +30,7 @@ gem 'rails_12factor', group: :production
 gem 'skrollr-rails'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'sass-mediaqueries-rails'
+gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
