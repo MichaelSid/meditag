@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :medications
   resource :gpdetail
   resources :emergency
+<<<<<<< HEAD
   resource :emergencycontact
+=======
+  
+>>>>>>> 41c093e6a3a838e7ed5cccbadaac8a4271d08455
   resource :idverify do
     collection do 
       get :verify

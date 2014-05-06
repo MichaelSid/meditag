@@ -48,8 +48,15 @@ describe "User profile page" do
         click_button 'Update Profile'
         expect(current_path).to eq "/profile/edit"
         find_field('profile_lastname').value.should eq 'Brown'
-
       end
     end
+
+    context 'assigning UUID to User table' do
+      it 'adds uuid to User table if table is currently nil' do
+        user = User.find(rick)
+        expect(user.uuid).to eq nil
+      end
+    end
+
   end
 end

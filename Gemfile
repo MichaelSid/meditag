@@ -41,17 +41,20 @@ gem 'skrollr-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development, :test do 
+group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'poltergeist'
+
 end
 
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+
 
 

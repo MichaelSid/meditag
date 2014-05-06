@@ -1,0 +1,23 @@
+<h1> Register Tag Unique Identifier </h1><br></br>
+
+
+<%= form_for @idverify, url: idverify_path do |f| %>
+
+  <%= f.text_field :uuid, placeholder: 'Uuid', class: 'form-control' %>
+
+  <%= f.submit %>
+
+<% end %>
+
+
+  <% if false %>
+<form class="form-inline" role="form" action="/idverify/verify" method="get">
+  <div class="form-group">
+    <label class="sr-only">Check Serial</label>
+    <input type="text" class="form-control" name="tag-uuid" id="uuid-form" placeholder="Enter Tag Serial" required>
+  </div>
+  <button type="submit" class="btn btn-info">Submit</button>
+</form>
+<% end %>
+
+<%= render '/layouts/flash' %>
