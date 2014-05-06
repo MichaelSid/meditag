@@ -26,8 +26,6 @@
         <br>
       </section>
     </div>   
-    <div class="image">
-    </div>
     <div class="text">
       <section id="gp">
         <h2>Signing up as a GP</h2>
@@ -39,8 +37,6 @@
         <br>
       </section>
     </div>   
-    <div class="image">
-    </div>
     <div class="text">
       <section id="emergency">
         <h2>Signing up as an Emergency Healthcare Professional</h2>
@@ -80,8 +76,9 @@
       })(jQuery);
       
       // call the plugin
-      $('section').parallax({ "coeff":-0.65 });
-      $('section div').parallax({ "coeff":1.15 });
+      $('.text').parallax({ "coeff":-0.65 });
+      $('.image').parallax({ "coeff":-0.65 });
+      $('section').parallax({ "coeff":1.15 });
     </script>
 </body>
 </html>
