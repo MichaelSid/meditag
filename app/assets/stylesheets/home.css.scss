@@ -8,6 +8,31 @@
 	text-align: center;
 }
 
+.logo {
+	position: fixed;
+	float: left;
+	z-index: 100;
+	height: 57px;
+  	width: 243px;
+ 	float: left;
+  	margin-top: -25px;
+  	margin-left: 8px;
+  	opacity: 0.5;
+}
+
+#logo-text {
+	position: fixed;
+	float: left;
+	display: inline-block;
+	font-family: 'Syncopate', sans-serif;
+	z-index: 80;
+	color: white;
+	opacity: 0.5;
+	height: 20px;
+  	margin-left: 10px;
+  	margin-top: 22px;
+}
+
 #patient:before { 
   display: block; 
   content: " "; 
@@ -30,10 +55,6 @@
   margin-top: -250px; 
   height: 250px; 
   visibility: hidden; 
-}
-
-a {
-	width: 30%;
 }
 
 .text {
@@ -65,7 +86,7 @@ a {
 
 .buttonTo {
 	margin: 25px;
-	width: 30%;
+	width: 35%;
 	min-width: 250px;
 	border-radius: 7px;
 	background-color: #053464;
@@ -76,7 +97,7 @@ a {
 
 #sign-up-gp {
 	margin: 25px;
-	width: 30%;
+	width: 35%;
 	min-width: 250px;
 	border-radius: 7px;
 	background-color: #053464;
@@ -87,7 +108,7 @@ a {
 
 #sign-up-emergency {
 	margin: 25px;
-	width: 30%;
+	width: 35%;
 	min-width: 250px;
 	border-radius: 7px;
 	background-color: #053464;
@@ -95,3 +116,17 @@ a {
 	border-shadow: none;
 	border: none;
 }
+
+.btn.btn-primary {
+	background-color: #053464;
+	width: 35%;
+	margin: 5px;
+	width: 35%;
+	min-width: 250px;
+	border-radius: 7px;
+	outline: none;
+	border-shadow: none;
+	border: none;
+}
+
+

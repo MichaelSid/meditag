@@ -5,17 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
   <meta charset="utf-8" />
   <title>Medicode Home</title>
 </head>
 <body class='homepage'>
+  <%= image_tag "medicode-logo.png", class: "logo" %>
+  <div id="logo-text">MEDICAL DATA DEVICE</div>
     <div class="text">
       <section id="summary">     
         <h2>About the Tag</h2>
         <span>Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed, you can simply update your information online.</span>
         <br>
         <br>
-        <a class="scroll" href="#patient">Signing up as Tag User</a>   <a class="scroll" href="#gp">Signing up as GP</a>   <a class="scroll" href="#emergency">Signing up as Emergency Healthcare Professional</a>
+        <a class="btn btn-primary scroll" href="#patient">Signing up as Tag User</a>   <a class="btn btn-primary scroll" href="#gp">Signing up as GP</a>   <a class="btn btn-primary scroll" href="#emergency">Signing up as Emergency Healthcare Professional</a>
         <br>
       </section>
     </div>   
@@ -103,7 +106,7 @@
             //go to destination
             $('html,body').animate({
                 scrollTop: dest
-            }, 2000, 'swing');
+            }, 333, 'swing');
             hashTagActive = this.hash;
         }
     });
