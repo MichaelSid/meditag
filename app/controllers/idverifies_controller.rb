@@ -1,9 +1,17 @@
 class IdverifiesController < ApplicationController
 
+include IdverifiesHelper
+
   def new
-    # @uuid = params['tag-uuid'].to_s\
-    # verify_uuid?
-    # uuid_assigned_to_user?
+    check_tag_association unless current_user.nil?
+  end
+
+  def check_tag_association
+    if current_user.uuid.blank?
+        flash.now[:notice] = "No tag associated with this account"
+      else
+        flash.now[:notice] = "Account already has a tag associated."
+    end
   end
 
    def edit
@@ -21,33 +29,29 @@ class IdverifiesController < ApplicationController
     end
   end
 
-  private
-
   def verify
     @uuid = params["tag-uuid"].to_s
     verification_functions
   end
 
   def verification_functions
-    combined_check
-    if combined_check
-      flash[:notice] = 'UUID verified successfully'
+    if valid_uuid?
+      flash.now[:notice] = 'UUID verified successfully'
+      save_uuid_to_current_user
     else
-      flash[:notice] = 'Something went wrong. Please try again'
+      flash.now[:notice] = 'Something went wrong. Please try again'
     end
   end
 
-  def combined_check
-    verify_uuid_length?
-    uuid_assigned_to_user?
-  end
-
-  def verify_uuid_length?
-    @uuid.length == 36 #? flash[:notice] = 'Correct length' : flash[:error] = 'Incorrect length'
-  end
-
-  def uuid_assigned_to_user?
-    User.exists?(uuid: @uuid) #? flash[:error] = 'ID already assigned to user' : flash[:notice] = 'ID not assigned to user'
+  def save_uuid_to_current_user
+    if user_signed_in?
+      current_user.uuid = @uuid
+      current_user.save
+      redirect_to edit_profile_path
+    else
+      session[:uuid] = @uuid
+      redirect_to new_user_registration_path
+    end
   end
 
 end
