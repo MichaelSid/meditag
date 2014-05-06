@@ -12,20 +12,23 @@
     <div class="text">
       <section id="summary">     
         <h2>About the Tag</h2>
-        <span>Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed; you can simply update your information online.</span>
+        <span>Using this website keeps all your medical details in one secure place, where you can access it at any time.  The data tag is discreet and lightweight, but easily identifiable by a paramedic or emergency doctor if necessary.  In this way it is similar to medical ID tags currently in circulation, but more efficient than the ID tag and wallet card combination.  It also allows for far easier updating when a medication is altered, or a condition status changes - no need to get a new bracelet engraved or a new card printed, you can simply update your information online.</span>
       </section>
     </div>   
-    <div class="image">
-    </div>
+
+    <img class="image" src="/assets/home_tree.png">
+    </img>
+    
     <div class="text">
       <section id="patient">
         <h2>Signing up as a Tag User</h2>
         <span>Signing up with a Tag User profile gives you 24/7 instant access to your own medical information, as customised by you.  The site gives you the ability to add or remove illnesses, allergies, and any current medication in order to ensure the best possible care in case of emergency</span>
         <br>
-        <%= button_to "Sign Up As Tag User", {:controller => "registration", :action => "new"}, {:method => :get} %>
+        <%= button_to "Sign Up As Tag User", {:controller => "registration", :action => "new"}, {:method => :get, :class => "buttonTo"} %>
         <br>
       </section>
     </div>   
+    
     <div class="text">
       <section id="gp">
         <h2>Signing up as a GP</h2>
@@ -37,6 +40,7 @@
         <br>
       </section>
     </div>   
+    
     <div class="text">
       <section id="emergency">
         <h2>Signing up as an Emergency Healthcare Professional</h2>
@@ -48,6 +52,7 @@
         <br>
       </section>
     </div>
+    
     <script>
       // The plugin code
       (function($){
@@ -76,8 +81,8 @@
       })(jQuery);
       
       // call the plugin
-      $('.text').parallax({ "coeff":-0.2 });
-      $('.image').parallax({ "coeff":0.8 });
+      $('.homepage').parallax({ "coeff":-0.2 });
+      $('.image').parallax({ "coeff":0.1 });
       // $('section').parallax({ "coeff":1.15 });
     </script>
 </body>
