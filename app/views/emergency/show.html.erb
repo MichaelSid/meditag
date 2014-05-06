@@ -1,17 +1,16 @@
 <% if @user.profile %>
   <div class='row'>
     <div class="col-xs-12 col-md-6 blue">
-      <%= @user.profile.firstname %>
-      <%= @user.profile.lastname %>
-      <%= @user.profile.dob %>
-      <%= @user.profile.contactnr %>
-      <%= @user.profile.address1 %>
-      <%= @user.profile.address2 %>
-      <%= @user.profile.town %>
-      <%= @user.profile.county %>
-      <%= @user.profile.country %>
-      <%= @user.profile.postcode %>
-      <%= @user.profile.gender %>
+      <p>Name: <%= @user.profile.firstname %> <%= @user.profile.lastname %></p>
+      <p>Date of Birth: <%= @user.profile.dob %></p>
+      <p><%= @user.profile.contactnr %></p>
+      <p><%= @user.profile.address1 %></p>
+      <p><%= @user.profile.address2 %></p>
+      <p><%= @user.profile.town %></p>
+      <p><%= @user.profile.county %></p>
+      <p><%= @user.profile.country %></p>
+      <p><%= @user.profile.postcode %></p>
+      <p><%= @user.profile.gender %></p>
     </div>
   </div>
 <% end %>
