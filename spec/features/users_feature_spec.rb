@@ -13,17 +13,30 @@ describe "sign up" do
 describe 'assign uuid to user' do
 
   before do
-      @tag_uuid = SecureRandom.uuid
       @rick = create(:user)
       login_as @rick
       create(:profile, user: @rick)
-      visit '/idverify/verify?tag-uuid=' + @tag_uuid
     end
 
   it 'assigns valid uuid to a logged in user' do
-    expect(@rick.reload.uuid).to eq @tag_uuid
+    tag_uuid = SecureRandom.uuid
+    visit '/idverify/verify?tag-uuid=' + tag_uuid
+    expect(@rick.reload.uuid).to eq tag_uuid
   end
-  
+
+  context 'user already has a valid uuid associated' do
+      it 'displays a message if account already has a uuid associated' do
+        visit '/idverify/verify?tag-uuid=' + SecureRandom.uuid
+        visit '/idverify/verify?tag-uuid=' + SecureRandom.uuid
+        visit new_idverify_path
+        expect(page).to have_content "Account already has a tag associated. Click the 'Register Tag' link to set new"
+      end
+
+      it 'displays a message if account does not have uuid associated' do
+        visit new_idverify_path
+        expect(page).to have_content "No tag associated with this account"
+      end
+    end
 end
 
 end

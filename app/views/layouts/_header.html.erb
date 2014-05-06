@@ -22,7 +22,7 @@
       <li class="<%= is_active?(new_condition_path)%>"><%= link_to ' Conditions', new_condition_path, class: 'fa fa-stethoscope' %></li>
       <li class="<%= is_active?(new_medication_path)%>"><%= link_to ' Medications', new_medication_path, class: 'fa fa-medkit' %></li>
       <li class="<%= is_active?(edit_gpdetail_path)%>"><%= link_to ' GP Details', edit_gpdetail_path, class: 'fa fa-user-md' %></li>
-      <li><a href="typography.html"><i class="fa fa-font"></i> Not used yet</a></li>
+      <li class="<%= is_active?(new_idverify_path)%>"><%= link_to ' Register Tag', new_idverify_path, class: 'fa fa-user-md' %></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right navbar-user">

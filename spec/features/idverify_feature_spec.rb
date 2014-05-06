@@ -14,6 +14,13 @@ describe 'QRCode registration page' do
     it 'should have a blank input field and a submit button' do
       find_field('Enter Tag Serial').value.should be_blank
     end
+
+  context 'user visits from sidebar link' do
+    it 'link should lead to uuid validation page' do
+      visit '/'
+      click_link 'Register Tag'
+      expect(full_current_path).to eq new_idverify_path
+    end
   end
 
   describe 'Checking QRCode uuid against database' do
@@ -48,7 +55,6 @@ describe 'QRCode registration page' do
         expect(page).to have_content 'Something went wrong. Please try again'
       end
     end
-
   end
 
   describe 'Verify validity of uuid' do
@@ -85,7 +91,6 @@ describe 'QRCode registration page' do
         expect(full_current_path).to eq new_user_registration_path
       end
     end
-
   end
-
+  end
 end

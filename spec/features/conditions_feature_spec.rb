@@ -54,31 +54,6 @@ before do
 		end
 	end
 
-
-
-	# describe 'User can edit a condition' do
-	# 	it 'should update the condition details' do
-	# 		create(:condition, user: @alex)
-	# 		visit current_path
-	# 		click_link 'Edit'
-	# 		fill_in 'Condition', with: 'Terrible cancer'
-	# 		click_button 'Update Condition'
-	# 		expect(page).to have_content 'Terrible cancer'
-	# 	end
-	# end
-
-	# describe 'Clicking on a condition' do
-
-	# 	it 'should take us to the condition page and display details' do
-	# 		create(:condition, user: @alex)
-	# 		visit current_path
-	# 		click_link 'Cancer'
-	# 		expect(page).to have_content 'not so good'
-	# 		expect(current_path).to eq '/conditions/' + @alex.conditions.first.id.to_s
-	# 	end
-	# end
-
-
 end
 
 
