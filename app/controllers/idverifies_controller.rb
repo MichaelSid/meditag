@@ -10,7 +10,7 @@ include IdverifiesHelper
     if current_user.uuid.blank?
         flash.now[:notice] = "No tag associated with this account"
       else
-        flash.now[:notice] = "Account already has a tag associated. Click the 'Register Tag' link to set new"
+        flash.now[:notice] = "Account already has a tag associated."
     end
   end
 
@@ -28,8 +28,6 @@ include IdverifiesHelper
       render 'update'
     end
   end
-
-  private
 
   def verify
     @uuid = params["tag-uuid"].to_s
