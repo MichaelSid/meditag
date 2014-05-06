@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502125012) do
+ActiveRecord::Schema.define(version: 20140506110359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,25 @@ ActiveRecord::Schema.define(version: 20140502125012) do
   end
 
   add_index "conditions", ["user_id"], name: "index_conditions_on_user_id", using: :btree
+
+  create_table "emergencycontacts", force: true do |t|
+    t.string   "belongs_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "relationship"
+    t.string   "contactnr"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "town"
+    t.string   "county"
+    t.string   "country"
+    t.string   "postcode"
+    t.integer  "user_id"
+  end
+
+  add_index "emergencycontacts", ["user_id"], name: "index_emergencycontacts_on_user_id", using: :btree
 
   create_table "gpdetails", force: true do |t|
     t.datetime "created_at"

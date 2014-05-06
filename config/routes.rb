@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'emergencycontacts/new'
+
   get 'static_pages/contact'
 
   get 'static_pages/about'
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   resources :medications
   resource :gpdetail
   resources :emergency
+  resource :emergencycontact
   resource :idverify do
     collection do 
       get :verify

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :conditions
   has_many :medications
   has_one :gpdetail
+  has_one :emergencycontact
 
 
   accepts_nested_attributes_for :medications, reject_if: lambda { |c| c[:medication].blank? }, allow_destroy: true

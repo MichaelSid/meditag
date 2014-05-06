@@ -1,0 +1,2 @@
+module EmergencycontactsHelper
+end
