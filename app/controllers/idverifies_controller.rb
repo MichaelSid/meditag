@@ -39,7 +39,7 @@ include IdverifiesHelper
       flash.now[:notice] = 'UUID verified successfully'
       save_uuid_to_current_user
     else
-      flash[:notice] = 'Something went wrong. Please try again'
+      flash.now[:notice] = 'Something went wrong. Please try again'
     end
   end
 
