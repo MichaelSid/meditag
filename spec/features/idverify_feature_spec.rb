@@ -14,6 +14,7 @@ describe 'QRCode registration page' do
     it 'should have a blank input field and a submit button' do
       find_field('Enter Tag Serial').value.should be_blank
     end
+  end
 
   context 'user visits from sidebar link' do
     #X'd out because it was working intermittently with no changes made
@@ -92,6 +93,5 @@ describe 'QRCode registration page' do
         expect(full_current_path).to eq new_user_registration_path
       end
     end
-  end
   end
 end
