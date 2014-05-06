@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 gem 'rails_12factor', group: :production
 gem 'skrollr-rails'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,13 +42,15 @@ gem 'skrollr-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development, :test do 
+group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'poltergeist'
+
 end
 
 gem 'devise'

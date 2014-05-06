@@ -5,30 +5,128 @@
 
 .homepage {
 	margin-top: 0;
+	text-align: center;
+}
+
+.logo {
+	position: fixed;
+	float: left;
+	z-index: 100;
+	height: 57px;
+  	width: 243px;
+ 	float: left;
+  	margin-top: -25px;
+  	margin-left: 8px;
+  	opacity: 0.5;
+}
+
+#logo-text {
+	position: fixed;
+	float: left;
+	display: inline-block;
+	font-family: 'Syncopate', sans-serif;
+	z-index: 80;
+	color: white;
+	opacity: 0.5;
+	height: 20px;
+  	margin-left: 10px;
+  	margin-top: 22px;
+}
+
+#patient:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -250px; 
+  height: 250px; 
+  visibility: hidden; 
+}
+
+#gp:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -250px; 
+  height: 250px; 
+  visibility: hidden; 
+}
+
+#emergency:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -250px; 
+  height: 250px; 
+  visibility: hidden; 
 }
 
 .text {
-	color: black;
+	color: white;
 	position: relative;
 	width: 100%;
-	height: 150px;
-	background-color: white;
-	background-opacity: 0.2;
-	padding: 25px;
-	margin-top: 125px;
-	margin-bottom: 125px;
+	background-color:rgba(255,255,255,0.25);
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 7%;
+	padding-bottom: 7%;
 	display: inline-block;
 	z-index: 200;
+	margin-top: 15%;
+	margin-bottom: 15%;
+	text-align: center;
+	vertical-align: center;
+	horizontal-align: center;
 }
 
 .image {
-	background: url(http://i.imgur.com/RURrXvT.jpg);
 	position: fixed; 
+	top: 0px;
 	width: 100%;
-	height: 100%;
+	height: 200%;
 	z-index: 0;
+	margin-left: 0;
 }
 
-section {
-
+.buttonTo {
+	margin: 25px;
+	width: 35%;
+	min-width: 250px;
+	border-radius: 7px;
+	background-color: #053464;
+	outline: none;
+	border-shadow: none;
+	border: none;
 }
+
+#sign-up-gp {
+	margin: 25px;
+	width: 35%;
+	min-width: 250px;
+	border-radius: 7px;
+	background-color: #053464;
+	outline: none;
+	border-shadow: none;
+	border: none;
+}
+
+#sign-up-emergency {
+	margin: 25px;
+	width: 35%;
+	min-width: 250px;
+	border-radius: 7px;
+	background-color: #053464;
+	outline: none;
+	border-shadow: none;
+	border: none;
+}
+
+.btn.btn-primary {
+	background-color: #053464;
+	width: 35%;
+	margin: 5px;
+	width: 35%;
+	min-width: 250px;
+	border-radius: 7px;
+	outline: none;
+	border-shadow: none;
+	border: none;
+}
+
+
