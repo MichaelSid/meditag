@@ -7,8 +7,9 @@
 jQuery ->
 
   refreshTooltips = ->
-    $('.emergency-field').tooltip()
-    $('.remove_fields').tooltip()
+    if $('.emergency-field').length
+      $('.emergency-field').tooltip()
+      $('.remove_fields').tooltip()
 	
   refreshTooltips()
   
