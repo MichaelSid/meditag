@@ -1,10 +1,10 @@
 <%= form_for @gpdetail, html: { role: 'form' }, url: gpdetail_path do |f| %>
 
 <div class="form-group"> 
-  <%= f.text_field :firstname, placeholder: 'Firstname', class: 'form-control' %> 
+  <%= f.text_field :firstname, required: true, placeholder: 'Firstname', class: 'form-control' %> 
 </div>
 <div class="form-group">
-  <%= f.text_field :lastname, class: 'form-control', placeholder: 'Lastname' %> 
+  <%= f.text_field :lastname, required: true, class: 'form-control', placeholder: 'Lastname' %> 
 </div>
 
 <div class="form-group">
@@ -12,7 +12,7 @@
 </div>
 
 <div class="form-group">
-  <%= f.text_field :contactnr, class: 'form-control', placeholder: 'Contact Number' %> 
+  <%= f.text_field :contactnr, required: true, class: 'form-control', placeholder: 'Contact Number' %> 
 </div>
 
 <div class="form-group">
@@ -24,7 +24,7 @@
 </div>
 
 <div class="form-group">
-  <%= f.text_field :town, class: 'form-control', placeholder: 'Town' %> 
+  <%= f.text_field :town, required: true, class: 'form-control', placeholder: 'Town' %> 
 </div>
 
 <div class="form-group">
@@ -32,16 +32,16 @@
 </div>
 
 <div class="form-group">
-  <%= f.text_field :country, class: 'form-control', placeholder: 'Country' %> 
+  <%= f.text_field :country, required: true, class: 'form-control', placeholder: 'Country' %> 
 </div>
 
 <div class="form-group">
   <%= f.text_field :postcode, class: 'form-control', placeholder: 'Postcode' %> 
 </div>
 
-
- <%= f.submit 'Update', class: 'btn btn-success' %> 
-
+<div class="form-group">
+   <%= f.submit 'Update', class: 'btn btn-success' %> 
+</div>
 <%end%>
 
 
