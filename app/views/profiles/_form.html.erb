@@ -19,7 +19,6 @@
       <%= f.text_field :contactnr, required: true, placeholder: 'Contact Number', class: 'form-control' %>
     </div>
 
-
     <div class="form-group">
       <%= f.text_field :address1, required: true, placeholder: 'Address Line 1', class: 'form-control' %>
     </div>
@@ -45,9 +44,9 @@
     </div>
 
     <div class="form-group">
-      <%= f.text_field :gender, required: true, placeholder: 'Gender', class: 'form-control' %>
+      <%= f.select :gender,%w{Male Female},:prompt => 'Select Gender',required: true, placeholder: 'Gender', class: 'form-control' %>
     </div>
-
+      
   </div>
 
   <div class="col-md-6">
