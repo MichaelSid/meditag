@@ -42,6 +42,10 @@
           <td>Gender</td>
           <td><%= @user.profile.gender %></td>
         </tr>
+      </table>
+    </div>
+  </div>
+<% end %>
 
 
       <% if false %>
@@ -57,34 +61,38 @@
       <%= @user.profile.gender %>
       <% end %>
 
-      </table>
-    </div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6 blue">
+    <h4>Medication</h4>
+    <table>
+      <% @user.medications.each do |med| %>
+        <% if med.emergency == true %>
+          <tr>
+          <td><%= med.medication %></td>
+          <td><%= med.dose %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
   </div>
-<% end %>
+</div>
 
-<% @user.medications.each do |med| %>
-  <% if med.emergency == true %>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 blue">
-        <h4>Medication</h4>
-        <p><%= med.medication %>
-        <%= med.dose %></p>
-      </div>
-    </div>
-  <% end %>
-<% end %>
-
-<% @user.conditions.each do |con| %>
-  <% if con.emergency == true %>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 blue">
-        <h4>Condition</h4>
-        <p><%= con.condition %>
-        <%= con.notes %></p>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+<div class="row">
+  <div class="col-xs-12 col-md-6 blue">
+    <h4>Condition</h4>
+    <table>
+      <% @user.conditions.each do |con| %>
+        <% if con.emergency == true %>
+          <tr>
+            <td><%= con.condition %></td>
+            <td><%= con.notes %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>
 
 <% if @user.gpdetail %>
   <div class="row">
