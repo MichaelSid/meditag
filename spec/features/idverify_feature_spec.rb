@@ -16,39 +16,56 @@ describe 'QRCode registration page' do
     end
   end
 
+  context 'user visits from sidebar link' do
+    #X'd out because it was working intermittently with no changes made
+    xit 'link should lead to uuid validation page' do
+      visit '/'
+      click_link 'Register Tag'
+      expect(full_current_path).to eq new_idverify_path
+    end
+  end
+
   describe 'Checking QRCode uuid against database' do
     
     before do
       @rick = create(:user)
       login_as @rick
-      create(:profile, user: @rick)
 
       @uuid = SecureRandom.uuid
       @qrpath = '/idverify/verify?tag-uuid=' + @uuid
       visit @qrpath
     end
   
-    context 'new user visits from qrcode' do
-      it 'should pass uuid to url parameters' do
-        expect(full_current_path).to eq @qrpath
+    context 'user visits from qrcode' do
+      it 'redirects logged out user to registration' do
+        logout :user
+        visit '/idverify/verify?tag-uuid=' + SecureRandom.uuid
+        expect(full_current_path).to eq new_user_registration_path
+      end
+
+      it 'redirects a logged in user to profile page' do
+        expect(full_current_path).to eq edit_profile_path
       end
     end
-  end
-  context 'check uuid against database' do
-    it 'should show flash message if uuid not already assigned' do
-      expect(page).to have_content 'UUID verified successfully'
-    end
-
-    it 'display flash message if uuid IS assigned to another user' do
-      visit '/idverify/new'
-      fill_in 'uuid-form', with: @uuid
-      click_button 'Submit'
-
-      expect(page).to have_content 'Something went wrong. Please try again'
+  
+    context 'check uuid against database' do
+      it 'display flash message if uuid IS already assigned to a user' do
+        visit '/idverify/new'
+        user = User.find(@rick)
+        user.uuid = @uuid.to_s
+        visit @qrpath
+        expect(page).to have_content 'Something went wrong. Please try again'
+      end
     end
   end
 
   describe 'Verify validity of uuid' do
+
+    before do
+      @uuid = SecureRandom.uuid
+      @rick = create(:user)
+      login_as @rick
+    end
 
     context 'uuid is invalid' do
       it 'it is invalid if not 36 chars long' do
@@ -57,9 +74,23 @@ describe 'QRCode registration page' do
       end
     end
 
-    context 'uuid is valid' do
+    context 'if uuid is valid and user logged out' do
       it 'displays a verification successful message' do
-        expect(page).to have_content 'UUID verified successfully'
+        logout :user
+        visit '/idverify/new'
+        fill_in 'uuid-form', with: @uuid
+        click_button 'Submit'
+        expect(full_current_path).to eq new_user_registration_path
+      end
+    end
+
+    context 'if uuid is valid and user logged in' do
+      it 'displays a verification successful message and redirect to sign up' do
+        logout :user
+        visit '/idverify/new'
+        fill_in 'uuid-form', with: @uuid
+        click_button 'Submit'
+        expect(full_current_path).to eq new_user_registration_path
       end
     end
   end
