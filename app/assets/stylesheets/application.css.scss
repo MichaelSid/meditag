@@ -23,7 +23,15 @@
  }
 
  #user_email {
+  width: 340px;
+ }
+
+ #user_password, #user_password_confirmation {
   width: 310px;
+ }
+
+ .remember-me-container {
+  width: 400px;
  }
 
 body {
