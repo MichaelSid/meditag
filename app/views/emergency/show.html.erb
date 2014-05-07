@@ -47,6 +47,10 @@
   </div>
 <% end %>
 
+<% if @user.emergencycontact %>
+  <%= button_to 'Send SMS', messages_path %>
+<% end %>
+
 
       <% if false %>
       Name: <%= @user.profile.firstname %> <%= @user.profile.lastname %>
