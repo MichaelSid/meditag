@@ -27,12 +27,13 @@ describe "User profile page" do
     fill_in 'profile[county]', with: "Sussex"
     fill_in 'profile[country]', with: "England"
     fill_in 'profile[postcode]', with: "sw14g"
-    fill_in 'profile[gender]', with: "male"
+    select("Male", :from => "profile_gender")
 
     click_button 'Create Profile'      
 
     expect(current_path).to eq "/profile/edit"
     expect(find_field('profile[town]').value).to eq 'London'
+    expect(find_field('profile_gender').value).to eq 'Male'
     end
 
     context 'editing profile' do 
