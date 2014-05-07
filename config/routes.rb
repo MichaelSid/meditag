@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resource :gpdetail
   resources :emergency
   resource :emergencycontact
+  resources :messages, only: [:create]
   
   resource :idverify do
     collection do 
