@@ -1,3 +1,7 @@
+<% if @user.emergencycontact %>
+  <%= button_to 'Notify Emergency Contact', messages_path, class: 'btn btn-success' %>
+<% end %>
+
 <div class="col-md-6">
   <% if @user.profile %>
     <div class="row">
@@ -163,7 +167,5 @@
 </div>
 
 
-<% if @user.emergencycontact %>
-  <%= button_to 'Send SMS', messages_path %>
-<% end %>
+
 
