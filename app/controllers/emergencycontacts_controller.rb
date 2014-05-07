@@ -33,8 +33,6 @@ def update
     end
   end
 
-
-
 private
 
 def  new_emergencycontact_params
