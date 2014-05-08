@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 		authenticate_user!
 		if current_user.update!(user_params)
 			redirect_to :back
+			flash[:notice] = "Saved!"
 		end
 	end
 
