@@ -2,11 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#ui-widget {
+textarea {
+	height: 33px;
 	float: left;
 	margin-right: 10px;
-	margin-top: 10px;
+	margin-top: 10px !important;
 	margin-bottom: 10px;
+	margin-right: 25px !important;
+	width: 350px;
+	border-radius: 4px;
+	border-color: #bababa;
+	box-shadow: inset 1px 1px 1px 1px #dddddd;
 }
 
 .dose-field {
@@ -14,6 +20,9 @@
 	margin-right: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	border-radius: 4px;
+	border-color: #bababa !important;
+	box-shadow: inset 1px 1px 1px 1px #dddddd !important;
 }
 
 body {
