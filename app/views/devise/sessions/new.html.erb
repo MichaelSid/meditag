@@ -4,19 +4,19 @@
   <%= devise_error_messages! %>
 
   <div class="input-group">
-    <span class="input-group-addon">Email</span>
+    <span class="input-group-addon" style="min-width:125px;">Email</span>
     <%= f.email_field :email, required: true, autofocus: true, class: 'form-control' %>
   </div>
   <br>
   <div class="input-group">
-    <span class="input-group-addon">Password</span>
+    <span class="input-group-addon" style="min-width:125px;">Password</span>
     <%= f.password_field :password, required: true, autocomplete: "off", class: 'form-control' %>
   </div>
   <br>
   <% if devise_mapping.rememberable? -%>
 
-    <div class="input-group remember-me-container">
-      <span class="input-group-addon">
+    <div class="input-group remember-me-container" style="width:625px;">
+      <span class="input-group-addon" style="min-width:125px;">
         <%= f.check_box :remember_me, class: 'checkbox' %> 
       </span>
         <%= f.label :remember_me, class: 'form-control' %>
