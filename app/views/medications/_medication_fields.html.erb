@@ -1,13 +1,13 @@
 <head>
-<!-- <link type="text/css" href="//pubchem.ncbi.nlm.nih.gov/jquery/jquery-ui-1.8.23.scroll.min.css" rel="stylesheet"> -->
-<script type="text/javascript" src="//pubchem.ncbi.nlm.nih.gov/jquery/jquery-1.8.0.min.js"></script>
+<link type="text/css" href="//pubchem.ncbi.nlm.nih.gov/jquery/jquery-ui-1.8.23.scroll.min.css" rel="stylesheet">
 <script type="text/javascript" src="//pubchem.ncbi.nlm.nih.gov/jquery/jquery-ui-1.8.23.multiselect.min.js"></script>
 </head>
 <body>
 <fieldset>
 
 	<div id="ui-widget">
-        <textarea name="Medication" rows="1" cols="50"></textarea>
+        <!-- <textarea name="Medication" rows="1" cols="50", placeholder="Medication", style="padding:5px;", class: "form-control medication-field"></textarea> -->
+        <%= f.text_field :medication, placeholder: 'Medication', class: "form-control medication-field", id: 'medication' %>
     </div>
 
   <%= f.text_field :dose, placeholder: "Dose (amount, frequency)", class: 'form-control dose-field' %> 
@@ -23,7 +23,7 @@
         jQuery(document).ready(function() {
             PubChemJQuery.pcautocp({
                 dictionary: "pc_compoundnames",
-                fieldname: "Medication",
+                fieldid: "medication",
                 multiSelect: false,
                 divid: "ui-widget"
             });
