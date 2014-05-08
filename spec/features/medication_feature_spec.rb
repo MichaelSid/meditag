@@ -12,9 +12,9 @@ describe 'User Medications' do
   describe "Adding a medication", :js => true do
     it 'displays on the page' do 
       fill_in 'Medication', with: 'Pulmecort'
-      fill_in 'Dose', with: '2mg'
+      fill_in 'Dose (amount, frequency)', with: '2mg'
       click_button 'Save Medications'
-      find_field('Dose').value.should eq '2mg'
+      find_field('Dose (amount, frequency)').value.should eq '2mg'
     end
   end
 
