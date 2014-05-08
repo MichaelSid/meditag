@@ -6,20 +6,32 @@
 .form-inline {
 
 	.condition-field {
-		margin-right: 10px;
-		margin-top: -10px;
-		margin-bottom: 10px;	
-	}
-
-	.notes-field {
+		float: left;
 		margin-right: 10px;
 		margin-top: 10px;
 		margin-bottom: 10px;
+		width: 350px !important;
+		border-radius: 4px;
+		border-color: #bababa !important;
+		box-shadow: inset 1px 1px 1px 1px #dddddd !important;
+	}
+
+	.notes-field {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width: 300px !important;
+		height: 150px !important;
+		border-radius: 4px;
+		border-color: #bababa !important;
+		box-shadow: inset 1px 1px 1px 1px #dddddd !important;
 	}
 
 	.emergency-field {
-		margin-left: 30px;
-		margin-right: 30px;
+		margin: 15px !important;
+	}
+
+	.remove_fields {
+		margin: 15px !important;
 	}
 /*
 	.checkboxFour {

@@ -1,9 +1,16 @@
-
+<head>
+<link type="text/css" href="//pubchem.ncbi.nlm.nih.gov/jquery/jquery-ui-1.8.23.scroll.min.css" rel="stylesheet">
+<script type="text/javascript" src="//pubchem.ncbi.nlm.nih.gov/jquery/jquery-ui-1.8.23.multiselect.min.js"></script>
+</head>
+<body>
 <fieldset>
 
-  <%= f.text_field :medication, placeholder: "Medication", class: 'form-control medication-field' %> 
+	<div id="ui-widget">
+        <!-- <textarea name="Medication" rows="1" cols="50", placeholder="Medication", style="padding:5px;", class: "form-control medication-field"></textarea> -->
+        <%= f.text_field :medication, placeholder: 'Medication', class: "form-control medication-field", id: 'medication' %>
+    </div>
 
-  <%= f.text_field :dose, placeholder: "Dose", class: 'form-control dose-field' %> 
+  <%= f.text_field :dose, placeholder: "Dose (amount, frequency)", class: 'form-control dose-field' %> 
 
   <%= f.check_box :emergency, class: 'emergency-field', data: { toggle: 'tooltip', placement: 'top', title: 'Add to Emergency Profile?' } %>
 
@@ -11,3 +18,15 @@
   <%= link_to "<span class='glyphicon glyphicon-trash'></span> ".html_safe, '#', class: "remove_fields", rel: 'tooltip', placement: 'top', title: 'Delete' %>
 
 </fieldset>
+
+ <script type="text/javascript">
+        jQuery(document).ready(function() {
+            PubChemJQuery.pcautocp({
+                dictionary: "pc_compoundnames",
+                fieldid: "medication",
+                multiSelect: false,
+                divid: "ui-widget"
+            });
+        });
+</script>
+</body>
