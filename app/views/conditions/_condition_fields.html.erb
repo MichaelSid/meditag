@@ -1,18 +1,22 @@
-
+<head>
+load "form_complete.js" ???
+</head>
+<body>
 <fieldset>
  
 
-  <%= f.text_field :condition, placeholder: "Condition", class: 'form-control condition-field' %> 
+	<input type="text" name="Condition" class="bp_form_complete-MEDDRA-name ac_input" size="100"/>
 
   <%= f.text_area :notes, placeholder: "Notes", class: 'form-control notes-field' %> 
 
   <%= f.check_box :emergency, class: 'emergency-field', data: { toggle: 'tooltip', placement: 'top', title: 'Add to Emergency Profile?' } %> 
 
 
-  
   <%= f.hidden_field :_destroy %>
 
   <%= link_to "<span class='glyphicon glyphicon-trash'></span> ".html_safe, '#', class: "remove_fields", rel: 'tooltip', placement: 'top', title: 'Delete' %>
 
 
 </fieldset>
+
+</body>
