@@ -10,7 +10,7 @@
         <textarea name="Medication" rows="1" cols="50"></textarea>
     </div>
 
-  <%= f.text_field :dose, placeholder: "Dose", class: 'form-control dose-field' %> 
+  <%= f.text_field :dose, placeholder: "Dose (amount, frequency)", class: 'form-control dose-field' %> 
 
   <%= f.check_box :emergency, class: 'emergency-field', data: { toggle: 'tooltip', placement: 'top', title: 'Add to Emergency Profile?' } %>
 

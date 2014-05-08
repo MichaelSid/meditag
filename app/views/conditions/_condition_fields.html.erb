@@ -1,11 +1,10 @@
 <head>
-load "form_complete.js" ???
+
 </head>
 <body>
 <fieldset>
- 
 
-	<input type="text" name="Condition" class="bp_form_complete-MEDDRA-name ac_input" size="100"/>
+	<%= f.text_area :condition, placeholder: "Condition", class: 'form-control condition-field' %>
 
   <%= f.text_area :notes, placeholder: "Notes", class: 'form-control notes-field' %> 
 
