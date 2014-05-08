@@ -25,6 +25,9 @@ jQuery ->
     event.preventDefault()
     refreshTooltips()
 
+  $('form-control condition-field').focus ->
+    $(this).animate({ height: "4em" }, 500)
+
 
 
 
