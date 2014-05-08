@@ -17,9 +17,8 @@ describe 'QRCode registration page' do
   end
 
   context 'user visits from sidebar link' do
-    #X'd out because it was working intermittently with no changes made
-    xit 'link should lead to uuid validation page' do
-      visit '/'
+    it 'link should lead to uuid validation page' do
+      visit '/users/sign_in'
       click_link 'Register Tag'
       expect(full_current_path).to eq new_idverify_path
     end
