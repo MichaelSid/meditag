@@ -1,8 +1,11 @@
-<% if @user.emergencycontact %>
-  <%= button_to 'Notify Emergency Contact', messages_path, class: 'btn btn-success' %>
-<% end %>
-
 <div class="col-md-6">
+
+  <% if @user.emergencycontact %>
+    <%= button_to 'Notify Emergency Contact', messages_path, class: 'btn btn-success btn-100' %>
+  <% end %>
+  <br>
+
+
   <% if @user.profile %>
     <div class="row">
       <div class="col-xs-12 col-md-12">
