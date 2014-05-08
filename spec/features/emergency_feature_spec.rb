@@ -13,12 +13,6 @@ describe 'emergency page' do
       expect(page).to have_content 'John'
     end
 
-    it 'shows lastname' do 
-      login_as @rick
-      visit emergency_path(@rick)
-      expect(page).to have_content 'Smith'
-    end
-
     context 'medications' do
       it 'do not shows medication' do 
         visit emergency_path(@rick)
