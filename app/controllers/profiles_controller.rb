@@ -29,11 +29,12 @@ class ProfilesController < ApplicationController
   def update
     @profile = current_user.profile
 
-    if @profile.update(new_profile_params)
+    if @profile.update!(new_profile_params)
       flash[:notice] = 'Profile updated successfully'
       redirect_to "/profile/edit"
     else
-      render 'update'
+      flash[:notice] = 'Profile not updated'
+      redirect_to "/profile/edit"
     end
   end
 
