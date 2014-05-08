@@ -20,7 +20,7 @@ describe "emergency contact page" do
     fill_in 'emergencycontact_firstname', with: "Lucy"
     fill_in 'emergencycontact_lastname', with: "Lecter"
     fill_in 'emergencycontact_relationship', with: "28-04-1988"
-    fill_in 'emergencycontact_contactnr', with: "0800123456"
+    fill_in 'emergencycontact_contactnr', with: "01722222111"
     fill_in 'emergencycontact_address1', with: "15"
     fill_in 'emergencycontact_address2', with: "A road"
     fill_in 'emergencycontact_town', with: "London"

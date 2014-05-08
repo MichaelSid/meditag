@@ -1,6 +1,6 @@
 class EmergencyController < ApplicationController
 
-  def infddex
+  def index
     @user = current_user
     @profile = current_user.profile
   end
