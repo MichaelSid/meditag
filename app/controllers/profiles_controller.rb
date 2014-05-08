@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+  include ProfileHelper
   before_action :authenticate_user!, except: [:show]
   
   def new
@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = current_user.profile
 
-    if @profile.update!(new_profile_params)
+    if @profile.update(new_profile_params)
       flash[:notice] = 'Profile updated successfully'
       redirect_to "/profile/edit"
     else

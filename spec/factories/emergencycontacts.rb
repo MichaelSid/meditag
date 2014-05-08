@@ -5,7 +5,7 @@ FactoryGirl.define do
     firstname "Lucy"
     lastname "Brown"
     relationship "28-04-1988"
-    contactnr "0840123456"
+    contactnr "01722111222"
     address1 "15"
     address2 "A road"
     town "London"
