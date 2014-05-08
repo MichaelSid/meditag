@@ -25,7 +25,7 @@ describe "GP details page" do
     fill_in 'gpdetail_address2', with: "A road"
     fill_in 'gpdetail_town', with: "London"
     fill_in 'gpdetail_county', with: "Sussex"
-    fill_in 'gpdetail_country', with: "England"
+    select("United Kingdom", :from => "gpdetail_country")
     fill_in 'gpdetail_postcode', with: "sw14g"
 
 
@@ -33,6 +33,7 @@ describe "GP details page" do
 
     expect(current_path).to eq "/gpdetail/edit"
     expect(find_field('gpdetail_firstname').value).to eq 'Hannibal'
+    expect(find_field('gpdetail_country').value).to eq 'United Kingdom'
     end
 
 
