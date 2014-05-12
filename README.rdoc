@@ -4,6 +4,29 @@
 MEDICODE Medical Data Device
 ----------------------------
 
+The purpose of this project was to create a web application to to tie in with hardware devices.
+The idea being to replace the industry standard medical tags worn by those with various allergies with a more comprehensive 
+solution.
+The problem with the current standard being that it does not show exactly what an individual might be suffering from and what
+allergies they may have, even to other medications, especially when problems may arise from confliction medications that may
+be adminstered by first responders or emergency services.
+The way we looked at solving this issue was to create tags that carried eithera QR code or an NFC (Near field Controller),
+these could be scanned by anybody using a smartphone and would direct that individual to a mobile web page that contains
+the emegency medical information of the individual who may be in distress.
+As well as listing the indivduals medication and dosages, the application integrates teh ability for a single click
+notification of that persons emergency contact, utilising the Twilio text-messaging API.
+
+  ---Tech Stack---
+  Ruby
+  Ruby on Rails
+  Javascript
+  HTML & CSS
+  Twitter Bootstrap
+  Rspec and Capybara testing frameworks
+  Twilio API
+  PostgreSQL
+  
+
 Web app created for Makers Academy final project May 2014 by
 * Tyler Rollins
 * Michael Sidon
