@@ -24,7 +24,9 @@ notification of that persons emergency contact, utilising the Twilio text-messag
   Twitter Bootstrap
   Rspec and Capybara testing frameworks
   Twilio API
+  Devise authentication
   PostgreSQL
+  Heroku
   
 
 Web app created for Makers Academy final project May 2014 by
